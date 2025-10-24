@@ -471,16 +471,7 @@ const ProductConfigurator: React.FC = () => {
                   <span className="text-3xl font-bold text-blue-400">${calculatePrice()}</span>
                 </div>
                 
-                <button 
-                  className="w-full bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-                  style={{ zIndex: 1000, position: 'relative' }}
-                >
-                  Add to Cart
-                </button>
-                
-                <p className="text-gray-400 text-sm text-center mt-4">
-                  Free shipping • 30-day return policy
-                </p>
+               
               </div>
             </div>
           </div>

@@ -4,7 +4,9 @@ import { Eye, Navigation, Shield, ChevronLeft, ArrowRight } from 'lucide-react';
 interface ProductsPageProps {
   onBackToHome: () => void;
   onSelectProduct: (productId: string) => void;
+  scrollToSection: (sectionId: string) => void; // ADD THIS
 }
+
 
 const ProductsPage: React.FC<ProductsPageProps> = ({ onBackToHome, onSelectProduct }) => {
   const products = [
@@ -156,12 +158,22 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onBackToHome, onSelectProdu
           <div className="bg-blue-900/30 rounded-2xl p-8 border border-blue-800">
             <h3 className="text-2xl font-bold text-white mb-4">Can't Decide?</h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Our team is here to help you customize the perfect smart glasses for your needs. 
+              Our team is here to help you customize the perfect smart glasses for your needs.
               Schedule a free consultation to discuss your requirements and get personalized recommendations.
             </p>
-            <button className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200">
-              Schedule Free Consultation
-            </button>
+<button
+  className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200"
+  onClick={() => {
+    onBackToHome(); // switch to home
+    setTimeout(() => {
+      scrollToSection('contact'); // now this works
+    }, 100);
+  }}
+>
+  Schedule Free Consultation
+</button>
+
+
           </div>
         </div>
       </div>

@@ -13,15 +13,15 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onBackToHome, onSelectProdu
     {
       id: 'surrounding-scanner',
       name: 'The Surrounding Scanner',
-      description: 'Our flagship model with advanced AI capabilities and comprehensive environmental awareness.',
-      startingPrice: 499,
+        description: 'A wearable system with a forward-facing camera and on-device AI that detects obstacles and provides real-time spoken alerts through a discreet earpiece.',
+      startingPrice: 79,
       color: 'blue',
       icon: Eye,
       features: [
-        'Basic proximity sensors included',
-        'Upgradeable to AI Camera & LIDAR',
+        'Front-facing AI camera for obstacle detection and object recognition',
+        'Real-time spoken alerts delivered to a discreet earpiece',
         'Customizable lens options',
-        'Optional vibration & Bluetooth'
+        'Optional vibration feedback & Bluetooth connectivity'
       ],
       available: true
     },

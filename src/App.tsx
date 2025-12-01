@@ -50,7 +50,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, firstName,
           ))}
           {isApplication && (
             <>
-              <style jsx>{`
+              <style>{`
                 @keyframes fall {
                   0% {
                     transform: translateY(-100vh) rotate(0deg);
@@ -179,20 +179,7 @@ function App() {
     }
   };
 
-  const handleJobApplicationSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    const firstName = (data.firstName as string) || 'there';
-    
-    setSuccessModal({
-      isOpen: true,
-      firstName,
-      type: 'application'
-    });
-    
-    e.currentTarget.reset();
-  };
+  // Application form removed in favor of Google Form link
 
   const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -243,17 +230,6 @@ function App() {
                 </span>
               </div>
 
-<button
-  className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 font-medium focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800"
-  onClick={() => {
-    setCurrentView('home');
-    setTimeout(() => {
-      scrollToSection('contact');
-    }, 100); // short delay to ensure the home view has rendered
-  }}
->
-  Contact Us
-</button>
 
             </div>
           </nav>
@@ -291,17 +267,6 @@ function App() {
                 </span>
               </div>
 
-<button
-  className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 font-medium focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800"
-  onClick={() => {
-    setCurrentView('home');
-    setTimeout(() => {
-      scrollToSection('contact');
-    }, 100); // short delay to ensure the home view has rendered
-  }}
->
-  Contact Us
-</button>
 
             </div>
           </nav>
@@ -310,6 +275,7 @@ function App() {
         <ProductsPage 
           onBackToHome={() => setCurrentView('home')} 
           onSelectProduct={handleSelectProduct}
+          scrollToSection={scrollToSection}
         />
       </div>
     );
@@ -357,17 +323,6 @@ function App() {
               </button>
             </div>
 
-<button
-  className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 font-medium focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800"
-  onClick={() => {
-    setCurrentView('home');
-    setTimeout(() => {
-      scrollToSection('contact');
-    }, 100); // short delay to ensure the home view has rendered
-  }}
->
-  Contact Us
-</button>
 
 
           </div>
@@ -386,8 +341,8 @@ function App() {
     </h1>
     
     <p className="scroll-animate text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed" style={{ transitionDelay: '200ms' }}>
-      Our revolutionary smart glasses use advanced AI and spatial technology to provide real-time navigation,
-      object recognition, and environmental awareness for enhanced independence.
+      Our smart glasses use a forward-facing camera and on-device AI to detect obstacles, recognize objects,
+      and deliver clear spoken alerts through a discreet earpiece, helping users navigate safely and independently.
     </p>
 
     <div className="scroll-animate flex flex-col sm:flex-row gap-4 justify-center mb-12" style={{ transitionDelay: '400ms' }}>
@@ -453,30 +408,6 @@ function App() {
       </div>
     </div>
 
-    <div className="scroll-animate-scale bg-gray-800 rounded-2xl p-8 mb-16 border border-gray-700">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h3 className="text-3xl font-bold text-white mb-6">
-            Founded on Personal Experience
-          </h3>
-          <p className="text-gray-300 mb-4 leading-relaxed">
-            VividSense was born from the personal journey of our founder, who experienced vision loss
-            and recognized the gap between existing assistive technologies and real-world needs. 
-            This firsthand understanding drives our commitment to creating solutions that truly work.
-          </p>
-          <p className="text-gray-300 leading-relaxed">
-            Every feature we develop is tested and refined with input from the visually impaired 
-            community, ensuring our technology serves real needs and enhances daily life in 
-            meaningful ways.
-          </p>
-        </div>
-        
-        <div className="bg-gray-700 aspect-video rounded-lg flex items-center justify-center border border-gray-600">
-          <p className="text-gray-400">Founder story image placeholder</p>
-        </div>
-      </div>
-    </div>
-
     <div className="grid md:grid-cols-2 gap-8 mb-16">
       <div className="scroll-animate-left bg-gray-800 p-8 rounded-xl border border-gray-700" style={{ transitionDelay: '0ms' }}>
         <div className="bg-blue-900/30 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
@@ -538,7 +469,7 @@ function App() {
       <div className="grid md:grid-cols-4 gap-8">
         <div>
           <div className="text-3xl font-bold text-blue-400 mb-2">100K+</div>
-          <div className="text-gray-300">Users by 2026</div>
+          <div className="text-gray-300">Users by 2027</div>
         </div>
         <div>
           <div className="text-3xl font-bold text-blue-400 mb-2">50+</div>
@@ -549,7 +480,7 @@ function App() {
           <div className="text-gray-300">Support availability</div>
         </div>
         <div>
-          <div className="text-3xl font-bold text-blue-400 mb-2">$500</div>
+          <div className="text-3xl font-bold text-blue-400 mb-2">$27</div>
           <div className="text-gray-300">Affordable pricing</div>
         </div>
       </div>
@@ -590,7 +521,7 @@ function App() {
         </div>
         <h3 className="text-lg font-semibold text-white mb-2">Object Recognition</h3>
         <p className="text-gray-300 text-sm">
-          Instant identification of people, objects, and obstacles in your path.
+          Instant identification of people, objects, and obstacles using a forward-facing camera; spoken alerts are delivered via a discreet earpiece.
         </p>
       </div>
 
@@ -610,7 +541,7 @@ function App() {
         </div>
         <h3 className="text-lg font-semibold text-white mb-2">Safety Alerts</h3>
         <p className="text-gray-300 text-sm">
-          Proactive warnings about low-hanging objects, steps, and potential hazards.
+          Proactive spoken warnings about low-hanging objects, steps, and potential hazards delivered through the earpiece.
         </p>
       </div>
     </div>
@@ -624,6 +555,9 @@ function App() {
           <p className="text-gray-300 mb-6 leading-relaxed">
             Experience the future of assistive technology with our flagship smart glasses. 
             Combining cutting-edge AI with elegant design for seamless daily use.
+          </p>
+          <p className="text-gray-300 mb-6 leading-relaxed">
+            A forward-facing camera and on-device AI detect obstacles in real time and notify the wearer with clear spoken alerts through a discreet earpiece or optional bone-conduction audio.
           </p>
           <div className="space-y-3 text-gray-300 mb-8">
             <div className="flex items-center">
@@ -764,7 +698,8 @@ function App() {
     </div>
 
     <div className="scroll-animate-scale bg-gray-900 rounded-2xl p-8 border border-gray-800 max-w-4xl mx-auto">
-      <form className="space-y-6" onSubmit={handleJobApplicationSubmit} style={{ position: 'relative', zIndex: 9999 }}>
+      {/* Replaced in-site form with external Google Form link */}
+      <div className="space-y-6" style={{ position: 'relative', zIndex: 9999 }}>
         <div className="grid md:grid-cols-3 gap-6">
           <div>
             <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
@@ -806,234 +741,23 @@ function App() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="position" className="block text-sm font-medium text-gray-300 mb-2">
-              Position of Interest *
-            </label>
-            <select
-              id="position"
-              name="position"
-              required
-              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white"
-            >
-              <option value="">Select a position</option>
-              <option value="software-engineer">Software Engineer</option>
-              <option value="ai-engineer">AI/ML Engineer</option>
-              <option value="hardware-engineer">Hardware Engineer</option>
-              <option value="ux-designer">UX Designer</option>
-              <option value="product-manager">Product Manager</option>
-              <option value="accessibility-specialist">Accessibility Specialist</option>
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="experience" className="block text-sm font-medium text-gray-300 mb-2">
-              Years of Experience *
-            </label>
-            <select
-              id="experience"
-              name="experience"
-              required
-              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white"
-            >
-              <option value="">Select experience level</option>
-              <option value="0-2">0-2 years</option>
-              <option value="3-5">3-5 years</option>
-              <option value="6-10">6-10 years</option>
-              <option value="10+">10+ years</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label htmlFor="motivation" className="block text-sm font-medium text-gray-300 mb-2">
-            Why do you want to join VIVIDSENSE? *
-          </label>
-          <textarea
-            id="motivation"
-            name="motivation"
-            rows={3}
-            required
-            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-vertical text-white placeholder-gray-400"
-            placeholder="Tell us about your passion for accessibility and how you'd contribute to our mission..."
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
-        >
-          Submit Application
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-      {/* Contact Us */}
-<section id="contact" className="py-20 bg-gradient-to-b from-blue-900 to-black">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16 scroll-animate">
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-        Get in Touch
-      </h2>
-      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-        Ready to learn more about VividSense smart glasses? We're here to answer
-        your questions and help you take the next step toward enhanced independence.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-2 gap-12">
-      {/* Contact Information */}
-      <div className="scroll-animate-left">
-        <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-        
-        <div className="space-y-6">
-          <div className="scroll-animate-left flex items-start" style={{ transitionDelay: '100ms' }}>
-            <div className="bg-blue-900/30 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-              <Phone className="h-6 w-6 text-blue-600" aria-hidden="true" />
-            </div>
-            <div>
-              <h4 className="font-semibold text-white mb-1">Phone</h4>
-              <p className="text-gray-300">(555) 123-4567</p>
-              <p className="text-sm text-gray-400">Monday - Friday, 8AM - 6PM PST</p>
-            </div>
-          </div>
-
-          <div className="scroll-animate-left flex items-start" style={{ transitionDelay: '200ms' }}>
-            <div className="bg-blue-900/30 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-              <Mail className="h-6 w-6 text-blue-600" aria-hidden="true" />
-            </div>
-            <div>
-              <h4 className="font-semibold text-white mb-1">Email</h4>
-              <p className="text-gray-300">info@vividsense.com</p>
-              <p className="text-sm text-gray-400">We respond within 24 hours</p>
-            </div>
-          </div>
-
-          <div className="scroll-animate-left flex items-start" style={{ transitionDelay: '300ms' }}>
-            <div className="bg-blue-900/30 w-12 h-12 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-              <MapPin className="h-6 w-6 text-blue-600" aria-hidden="true" />
-            </div>
-            <div>
-              <h4 className="font-semibold text-white mb-1">Address</h4>
-              <p className="text-gray-300">
-                123 Innovation Drive<br />
-                San Francisco, CA 94105
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="scroll-animate-left mt-8 p-6 bg-blue-900/30 rounded-lg border border-blue-800" style={{ transitionDelay: '400ms' }}>
-          <h4 className="font-semibold text-white mb-2">Free Consultation Available</h4>
-          <p className="text-gray-300 text-sm">
-            Schedule a free consultation to learn how VividSense can enhance your independence.
-            No obligation, available nationwide.
+        <div className="bg-blue-900/20 rounded-xl p-6 border border-blue-800">
+          <p className="text-gray-300 mb-4">
+            We’ve moved our application process to Google Forms to streamline submissions.
+          </p>
+          <a
+            href={"https://forms.gle/U8JGZv6W3VSeEaoN6"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center w-full bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
+            aria-label="Open Google Form to apply"
+          >
+            Apply via Google Form
+          </a>
+          <p className="text-sm text-blue-200 mt-3">
+            Note: Opens in a new tab; no data is collected on this site.
           </p>
         </div>
-      </div>
-
-      {/* Contact Form */}
-      <div className="scroll-animate-right">
-        <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
-        
-        <form className="space-y-6" onSubmit={handleContactSubmit}>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="scroll-animate-right" style={{ transitionDelay: '100ms' }}>
-              <label htmlFor="contactFirstName" className="block text-sm font-medium text-gray-300 mb-2">
-                First Name *
-              </label>
-              <input
-                type="text"
-                id="contactFirstName"
-                name="firstName"
-                required
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white placeholder-gray-400"
-              />
-            </div>
-            
-            <div className="scroll-animate-right" style={{ transitionDelay: '150ms' }}>
-              <label htmlFor="contactLastName" className="block text-sm font-medium text-gray-300 mb-2">
-                Last Name *
-              </label>
-              <input
-                type="text"
-                id="contactLastName"
-                name="lastName"
-                required
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white placeholder-gray-400"
-              />
-            </div>
-          </div>
-
-          <div className="scroll-animate-right" style={{ transitionDelay: '200ms' }}>
-            <label htmlFor="contactEmail" className="block text-sm font-medium text-gray-300 mb-2">
-              Email Address *
-            </label>
-            <input
-              type="email"
-              id="contactEmail"
-              name="email"
-              required
-              className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white placeholder-gray-400"
-            />
-          </div>
-
-          <div className="scroll-animate-right" style={{ transitionDelay: '250ms' }}>
-            <label htmlFor="contactPhone" className="block text-sm font-medium text-gray-300 mb-2">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              id="contactPhone"
-              name="phone"
-              className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white placeholder-gray-400"
-            />
-          </div>
-
-          <div className="scroll-animate-right" style={{ transitionDelay: '300ms' }}>
-            <label htmlFor="contactSubject" className="block text-sm font-medium text-gray-300 mb-2">
-              Subject *
-            </label>
-            <select
-              id="contactSubject"
-              name="subject"
-              required
-              className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white"
-            >
-              <option value="">Select a topic</option>
-              <option value="consultation">Schedule Consultation</option>
-              <option value="product-info">Product Information</option>
-              <option value="support">Technical Support</option>
-              <option value="partnership">Partnership Inquiry</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div className="scroll-animate-right" style={{ transitionDelay: '350ms' }}>
-            <label htmlFor="contactMessage" className="block text-sm font-medium text-gray-300 mb-2">
-              Message *
-            </label>
-            <textarea
-              id="contactMessage"
-              name="message"
-              rows={5}
-              required
-              className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-vertical text-white placeholder-gray-400"
-              placeholder="Tell us how we can help you..."
-            ></textarea>
-          </div>
-
-          <div className="scroll-animate-right" style={{ transitionDelay: '400ms' }}>
-            <button
-              type="submit" 
-              className="w-full bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
-            >
-              Send Message
-            </button>
-          </div>
-        </form>
       </div>
     </div>
   </div>
@@ -1062,7 +786,7 @@ function App() {
         <div className="space-y-3 text-gray-300">
           <div className="flex items-center">
             <Phone className="h-4 w-4 mr-2 flex-shrink-0" aria-hidden="true" />
-            <span>(555) 123-4567</span>
+            <span>(732)-829-1158</span>
           </div>
           <div className="flex items-center">
             <Mail className="h-4 w-4 mr-2 flex-shrink-0" aria-hidden="true" />

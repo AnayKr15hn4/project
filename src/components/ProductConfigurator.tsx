@@ -35,19 +35,19 @@ const ProductConfigurator: React.FC = () => {
 
   // Pricing logic
   const calculatePrice = () => {
-    let basePrice = 499; // Base price for basic sensor
+    let basePrice = 79; // Base price for basic sensor
     
-    if (config.sensors.aiCamera) basePrice += 200;
-    if (config.sensors.lidarHat) basePrice += 300;
+    if (config.sensors.aiCamera) basePrice += 35;
+    if (config.sensors.lidarHat) basePrice += 35;
     if (config.features.vibrationFeedback) basePrice += 50;
     if (config.features.bluetoothConnectivity) basePrice += 75;
     
     // Lens upgrades
-    if (config.lensType === 'polarized') basePrice += 100;
-    else if (config.lensType === 'near-sighted' || config.lensType === 'far-sighted') basePrice += 150;
-    else if (config.lensType === 'fully-blocked') basePrice += 80;
+    if (config.lensType === 'polarized') basePrice += 50;
+    else if (config.lensType === 'near-sighted' || config.lensType === 'far-sighted') basePrice += 50;
+    else if (config.lensType === 'fully-blocked') basePrice += 0;
     
-    if (config.polarized && config.lensType !== 'fully-blocked') basePrice += 100;
+    if (config.polarized && config.lensType !== 'fully-blocked') basePrice += 50;
     
     return basePrice;
   };
@@ -201,8 +201,8 @@ const ProductConfigurator: React.FC = () => {
                           <Camera className="h-8 w-8 text-green-400 mr-4" />
                           <div>
                             <h3 className="text-xl font-semibold text-white mb-1">AI Camera</h3>
-                            <p className="text-gray-300">Object recognition and scene analysis</p>
-                            <span className="text-sm text-green-400 font-medium">+$200</span>
+                            <p className="text-gray-300">Object recognition and scene analysis — detects obstacles and provides spoken alerts via a connected earpiece.</p>
+                            <span className="text-sm text-green-400 font-medium">+35</span>
                           </div>
                         </div>
                         {config.sensors.aiCamera && (
@@ -226,7 +226,7 @@ const ProductConfigurator: React.FC = () => {
                           <div>
                             <h3 className="text-xl font-semibold text-white mb-1">LIDAR Hat</h3>
                             <p className="text-gray-300">3D spatial mapping and precise distance measurement</p>
-                            <span className="text-sm text-purple-400 font-medium">+$300</span>
+                            <span className="text-sm text-purple-400 font-medium">+35</span>
                           </div>
                         </div>
                         {config.sensors.lidarHat && (
@@ -319,9 +319,9 @@ const ProductConfigurator: React.FC = () => {
                       <div className="grid md:grid-cols-2 gap-4">
                         {[
                           { value: 'clear', label: 'Clear', description: 'No vision correction', price: 'Included' },
-                          { value: 'near-sighted', label: 'Near-sighted', description: 'Corrective lenses for myopia', price: '+$150' },
-                          { value: 'far-sighted', label: 'Far-sighted', description: 'Corrective lenses for hyperopia', price: '+$150' },
-                          { value: 'fully-blocked', label: 'Fully Blocked', description: 'Complete light blocking for privacy', price: '+$80' },
+                          { value: 'near-sighted', label: 'Near-sighted', description: 'Corrective lenses for myopia', price: '+$50' },
+                          { value: 'far-sighted', label: 'Far-sighted', description: 'Corrective lenses for hyperopia', price: '+$50' },
+                          { value: 'fully-blocked', label: 'Fully Blocked', description: 'Complete light blocking for privacy', price: '+$0' },
                         ].map((lens) => (
                           <div
                             key={lens.value}
@@ -427,10 +427,10 @@ const ProductConfigurator: React.FC = () => {
                     <p className="text-white text-sm">Basic Sensor</p>
                   )}
                   {config.sensors.aiCamera && (
-                    <p className="text-white text-sm">AI Camera (+$200)</p>
+                    <p className="text-white text-sm">AI Camera (+35)</p>
                   )}
                   {config.sensors.lidarHat && (
-                    <p className="text-white text-sm">LIDAR Hat (+$300)</p>
+                    <p className="text-white text-sm">LIDAR Hat (+$35)</p>
                   )}
                 </div>
 

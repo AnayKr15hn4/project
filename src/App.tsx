@@ -724,58 +724,74 @@ function App() {
   </div>
 </section>
 
-    {/* Footer */}
-<footer className="relative bg-black text-white py-16 overflow-hidden">
-  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent"></div>
-  <div className="absolute bottom-0 left-1/4 w-96 h-48 bg-blue-600/5 rounded-full blur-3xl"></div>
-  <div className="absolute bottom-0 right-1/4 w-80 h-40 bg-blue-500/8 rounded-full blur-3xl"></div>
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid md:grid-cols-4 gap-8">
-      <div className="md:col-span-2 scroll-animate-left" style={{ transitionDelay: '0ms' }}>
-        <div className="flex items-center mb-4">
-          <Eye className="h-8 w-8 text-blue-400 mr-3" aria-hidden="true" />
-          <span className="text-2xl font-bold">VividSense</span>
-        </div>
-        <p className="text-gray-300 mb-6 max-w-md">
-          Empowering independence through innovative assistive technology. 
-          Our mission is to enhance mobility and confidence for the visually impaired community.
-        </p>
+ <footer className="relative bg-black text-white overflow-hidden">
+      {/* Spline 3D Background */}
+      <div className="absolute inset-0 w-full h-full opacity-40">
+        <iframe 
+          src='https://my.spline.design/claritystream-UfSEXjN1yhY7YCcWZWvOnhSV/' 
+          frameBorder='0' 
+          width='100%' 
+          height='100%'
+          className="pointer-events-none"
+          title="3D Background Animation"
+        />
       </div>
       
-      <div className="scroll-animate" style={{ transitionDelay: '150ms' }}>
-        <h4 className="font-semibold text-gray-300 mb-4">Contact</h4>
-        <div className="space-y-3 text-gray-300">
-          <div className="flex items-center">
-            <Phone className="h-4 w-4 mr-2 flex-shrink-0" aria-hidden="true" />
-            <span>(732)-829-1158</span>
-          </div>
-          <div className="flex items-center">
-            <Mail className="h-4 w-4 mr-2 flex-shrink-0" aria-hidden="true" />
-            <span>info@vividsense.com</span>
-          </div>
-          <div className="flex items-start">
-            <MapPin className="h-4 w-4 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
-            <span>East Meadow Estates <br />Kendal Park, NJ 08824</span>
-          </div>
-        </div>
-      </div>
+      {/* Overlay gradient for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50"></div>
       
-      <div className="scroll-animate-right" style={{ transitionDelay: '300ms' }}>
-        <h4 className="font-semibold text-gray-300 mb-4">Resources</h4>
-        <div className="space-y-2">
-          <button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left">User Guide</button>
-          <button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left">Support Center</button>
-          <button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left">Accessibility</button>
-          <button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left">Privacy Policy</button>
+      {/* Content */}
+      <div className="relative z-10 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="md:col-span-2">
+              <div className="flex items-center mb-4">
+                <Eye className="h-8 w-8 text-blue-400 mr-3" aria-hidden="true" />
+                <span className="text-2xl font-bold">VividSense</span>
+              </div>
+              <p className="text-gray-300 mb-6 max-w-md">
+                Empowering independence through innovative assistive technology. 
+                Our mission is to enhance mobility and confidence for the visually impaired community.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-gray-300 mb-4">Contact</h4>
+              <div className="space-y-3 text-gray-300">
+                <div className="flex items-center">
+                  <Phone className="h-4 w-4 mr-2 flex-shrink-0" aria-hidden="true" />
+                  <span>(732)-829-1158</span>
+                </div>
+                <div className="flex items-center">
+                  <Mail className="h-4 w-4 mr-2 flex-shrink-0" aria-hidden="true" />
+                  <span>info@vividsense.com</span>
+                </div>
+                <div className="flex items-start">
+                  <MapPin className="h-4 w-4 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
+                  <span>East Meadow Estates <br />Kendal Park, NJ 08824</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-gray-300 mb-4">Resources</h4>
+              <div className="space-y-2">
+                <button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left p-0">User Guide</button>
+                <button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left p-0">Support Center</button>
+                <button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left p-0">Accessibility</button>
+                <button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left p-0">Privacy Policy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; 2025 VividSense. All rights reserved. Committed to accessibility and independence.</p>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 scroll-animate" style={{ transitionDelay: '450ms' }}>
-      <p>&copy; 2025 VividSense. All rights reserved. Committed to accessibility and independence.</p>
-    </div>
-  </div>
-</footer>
+    </footer>
+  );
+}
       <SuccessModal
         isOpen={successModal.isOpen}
         onClose={closeSuccessModal}

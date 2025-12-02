@@ -700,46 +700,7 @@ function App() {
     <div className="scroll-animate-scale bg-gray-900 rounded-2xl p-8 border border-gray-800 max-w-4xl mx-auto">
       {/* Replaced in-site form with external Google Form link */}
       <div className="space-y-6" style={{ position: 'relative', zIndex: 9999 }}>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div>
-            <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
-              First Name *
-            </label>
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              required
-              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white placeholder-gray-400"
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-2">
-              Last Name *
-            </label>
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              required
-              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white placeholder-gray-400"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-              Email Address *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white placeholder-gray-400"
-            />
-          </div>
-        </div>
+        
 
         <div className="bg-blue-900/20 rounded-xl p-6 border border-blue-800">
           <p className="text-gray-300 mb-4">
@@ -794,7 +755,7 @@ function App() {
           </div>
           <div className="flex items-start">
             <MapPin className="h-4 w-4 mr-2 mt-1 flex-shrink-0" aria-hidden="true" />
-            <span>123 Innovation Drive<br />San Francisco, CA 94105</span>
+            <span>East Meadow Estates <br />Kendal Park, NJ 08824</span>
           </div>
         </div>
       </div>

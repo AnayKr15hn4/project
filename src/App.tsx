@@ -341,8 +341,7 @@ function App() {
     </h1>
     
     <p className="scroll-animate text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed" style={{ transitionDelay: '200ms' }}>
-      Our smart glasses use a forward-facing camera and on-device AI to detect obstacles, recognize objects,
-      and deliver clear spoken alerts through a discreet earpiece, helping users navigate safely and independently.
+      Our assistive technology uses advanced sensors and on-device intelligence to interpret the user’s surroundings and provide clear, real-time guidance, empowering individuals to navigate daily environments with greater confidence and independence.
     </p>
 
     <div className="scroll-animate flex flex-col sm:flex-row gap-4 justify-center mb-12" style={{ transitionDelay: '400ms' }}>

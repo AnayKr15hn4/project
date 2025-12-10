@@ -593,11 +593,14 @@ View All Products
 
 <div className="relative scroll-animate-right">
 <div className="bg-gray-800 aspect-square rounded-lg flex items-center justify-center border border-gray-700 overflow-hidden">
-<div className="text-center p-8">
-<Eye className="h-16 w-16 text-blue-400 mx-auto mb-4" aria-hidden="true" />
-<h4 className="text-white font-semibold mb-2">The Surrounding Scanner</h4>
-<p className="text-gray-400 text-sm">Smart Glasses Configurator</p>
+<div className="bg-gray-800 aspect-square rounded-lg flex items-center justify-center border border-gray-700 overflow-hidden">
+  <img
+    src="tssing5.png"
+    alt="VividSense Sourounding scanner"
+    className="w-full h-full object-cover"
+  />
 </div>
+
 </div>
 </div>
 </div>

@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { Eye, Navigation, Shield, Users, Star, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
 import ProductConfigurator from './components/ProductConfigurator';
 import ProductsPage from './components/ProductsPage';
+import tssing5 from './tssing5.png';
+
 
 interface SuccessModalProps {
 isOpen: boolean;
@@ -593,13 +595,12 @@ View All Products
 
 <div className="relative scroll-animate-right">
 <div className="bg-gray-800 aspect-square rounded-lg flex items-center justify-center border border-gray-700 overflow-hidden">
-<div className="bg-gray-800 aspect-square rounded-lg flex items-center justify-center border border-gray-700 overflow-hidden">
-  <img
-    src="./tssing5.png"
-    alt="VividSense Sourounding scanner"
-    className="w-full h-full object-cover"
-  />
-</div>
+<img
+  src={tssing5}
+  alt="VividSense Surrounding scanner"
+  className="w-full h-full object-cover"
+/>
+
 
 </div>
 </div>

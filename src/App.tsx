@@ -592,11 +592,11 @@ function App() {
         
         <div className="relative scroll-animate-right">
           <div className="bg-gray-800 aspect-square rounded-lg flex items-center justify-center border border-gray-700 overflow-hidden">
-            <div className="text-center p-8">
-              <Eye className="h-16 w-16 text-blue-400 mx-auto mb-4" aria-hidden="true" />
-              <h4 className="text-white font-semibold mb-2">The Surrounding Scanner</h4>
-              <p className="text-gray-400 text-sm">Smart Glasses Configurator</p>
-            </div>
+            <img
+              src="/tssing5.png"
+              alt="VividSense Pro Smart Glasses"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
@@ -622,11 +622,11 @@ function App() {
           <div className="bg-green-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
             <Star className="h-5 w-5 text-green-600" aria-hidden="true" />
           </div>
-          <span className="text-sm text-gray-400">March 2025</span>
+          <span className="text-sm text-gray-400">December 2025</span>
         </div>
-        <h3 className="text-lg font-semibold text-white mb-2">AI Recognition Update</h3>
+        <h3 className="text-lg font-semibold text-white mb-2">Dexarm Improvments</h3>
         <p className="text-gray-300 text-sm">
-          Enhanced object recognition with 40% improved accuracy and support for 200+ new object categories.
+          improving on the original Dexarm prototype 1.
         </p>
       </div>
 
@@ -635,11 +635,11 @@ function App() {
           <div className="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
             <Navigation className="h-5 w-5 text-blue-600" aria-hidden="true" />
           </div>
-          <span className="text-sm text-gray-400">February 2025</span>
+          <span className="text-sm text-gray-400">November 2025</span>
         </div>
-        <h3 className="text-lg font-semibold text-white mb-2">Indoor Navigation</h3>
+        <h3 className="text-lg font-semibold text-white mb-2">Dexarm Prototype 1 Done</h3>
         <p className="text-gray-300 text-sm">
-          New indoor mapping technology now available in 500+ shopping centers and public buildings.
+          Affordable prosthetic arm product comming soon.
         </p>
       </div>
 
@@ -648,11 +648,11 @@ function App() {
           <div className="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
             <Users className="h-5 w-5 text-purple-600" aria-hidden="true" />
           </div>
-          <span className="text-sm text-gray-400">January 2025</span>
+          <span className="text-sm text-gray-400">May 2025</span>
         </div>
         <h3 className="text-lg font-semibold text-white mb-2">Community Milestone</h3>
         <p className="text-gray-300 text-sm">
-          Reached 10,000 active users worldwide with 98% satisfaction rate and 15M+ safe navigation miles.
+          Placed second out to 42 gtoups in SB Launch(school competition).
         </p>
       </div>
     </div>
@@ -667,13 +667,13 @@ function App() {
           <div className="bg-yellow-100 w-8 h-8 rounded-full flex items-center justify-center mr-3">
             <Eye className="h-4 w-4 text-yellow-600" aria-hidden="true" />
           </div>
-          <span className="text-gray-300">Multi-language support (12 languages)</span>
+          <span className="text-gray-300">Dexarm Prototype 2</span>
         </div>
         <div className="flex items-center">
           <div className="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-3">
             <Shield className="h-4 w-4 text-green-600" aria-hidden="true" />
           </div>
-          <span className="text-gray-300">Advanced weather detection</span>
+          <span className="text-gray-300">Sourounding Scanner Version 3</span>
         </div>
       </div>
     </div>

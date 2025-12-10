@@ -739,6 +739,9 @@ function App() {
       {/* Overlay gradient for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50"></div>
       
+function App() {
+  return (
+    <div>
       {/* Content */}
       <div className="relative z-10 py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -753,7 +756,7 @@ function App() {
                 Our mission is to enhance mobility and confidence for the visually impaired community.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-semibold text-gray-300 mb-4">Contact</h4>
               <div className="space-y-3 text-gray-300">
@@ -771,7 +774,7 @@ function App() {
                 </div>
               </div>
             </div>
-            
+
             <div>
               <h4 className="font-semibold text-gray-300 mb-4">Resources</h4>
               <div className="space-y-2">
@@ -782,15 +785,14 @@ function App() {
               </div>
             </div>
           </div>
-          
+
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
             <p>&copy; 2025 VividSense. All rights reserved. Committed to accessibility and independence.</p>
           </div>
         </div>
       </div>
-    </footer>
-  );
-}
+
+      {/* Success Modal moved inside the return */}
       <SuccessModal
         isOpen={successModal.isOpen}
         onClose={closeSuccessModal}

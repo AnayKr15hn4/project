@@ -683,45 +683,134 @@ Reached 10,000 active users worldwide with 98% satisfaction rate and 15M+ safe n
 
 {/* Apply */}
 <section id="apply" className="relative py-20 bg-black overflow-hidden">
-<div className="absolute inset-0 bg-gradient-to-bl from-blue-800/12 via-transparent to-blue-900/8"></div>
-<div className="absolute top-1/4 left-1/5 w-80 h-80 bg-blue-600/6 rounded-full blur-3xl"></div>
-<div className="absolute bottom-1/3 right-1/5 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<div className="text-center mb-16 scroll-animate">
-<h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-Join Our Team
-</h2>
-<p className="text-xl text-gray-300 max-w-3xl mx-auto">
-Help us build the future of assistive technology. We're looking for passionate individuals 
-who want to make a meaningful impact on accessibility and independence.
-</p>
-</div>
+  <div className="absolute inset-0 bg-gradient-to-bl from-blue-800/12 via-transparent to-blue-900/8"></div>
+  <div className="absolute top-1/4 left-1/5 w-80 h-80 bg-blue-600/6 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-1/3 right-1/5 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16 scroll-animate">
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        Join Our Team
+      </h2>
+      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        Help us build the future of assistive technology. We're looking for passionate individuals 
+        who want to make a meaningful impact on accessibility and independence.
+      </p>
+    </div>
 
-<div className="scroll-animate-scale bg-gray-900 rounded-2xl p-8 border border-gray-800 max-w-4xl mx-auto">
-{/* Replaced in-site form with external Google Form link */}
-<div className="space-y-6" style={{ position: 'relative', zIndex: 9999 }}>
-        
+    <div className="scroll-animate-scale bg-gray-900 rounded-2xl p-8 border border-gray-800 max-w-4xl mx-auto">
+      <form
+        className="space-y-6"
+        action="https://formspree.io/f/xovgkvro" 
+        method="POST"
+        style={{ position: 'relative', zIndex: 9999 }}
+      >
+        <input type="hidden" name="_subject" value="New Job Application Submission" />
+        <input type="hidden" name="_replyto" value="iamanaykrishna@gmail.com" />
 
-<div className="bg-blue-900/20 rounded-xl p-6 border border-blue-800">
-<p className="text-gray-300 mb-4">
-We’ve moved our application process to Google Forms to streamline submissions.
-</p>
-<a
-href={"https://forms.gle/U8JGZv6W3VSeEaoN6"}
-target="_blank"
-rel="noopener noreferrer"
-className="inline-flex items-center justify-center w-full bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
-aria-label="Open Google Form to apply"
->
-Apply via Google Form
-</a>
-<p className="text-sm text-blue-200 mt-3">
-Note: Opens in a new tab; no data is collected on this site.
-</p>
-</div>
-</div>
-</div>
-</div>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div>
+            <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
+              First Name *
+            </label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              required
+              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white placeholder-gray-400"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-2">
+              Last Name *
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              required
+              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white placeholder-gray-400"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white placeholder-gray-400"
+            />
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label htmlFor="position" className="block text-sm font-medium text-gray-300 mb-2">
+              Position of Interest *
+            </label>
+            <select
+              id="position"
+              name="position"
+              required
+              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white"
+            >
+              <option value="">Select a position</option>
+              <option value="software-engineer">Software Engineer</option>
+              <option value="ai-engineer">AI/ML Engineer</option>
+              <option value="hardware-engineer">Hardware Engineer</option>
+              <option value="ux-designer">UX Designer</option>
+              <option value="product-manager">Product Manager</option>
+              <option value="accessibility-specialist">Accessibility Specialist</option>
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="experience" className="block text-sm font-medium text-gray-300 mb-2">
+              Years of Experience *
+            </label>
+            <select
+              id="experience"
+              name="experience"
+              required
+              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-white"
+            >
+              <option value="">Select experience level</option>
+              <option value="0-2">0-2 years</option>
+              <option value="3-5">3-5 years</option>
+              <option value="6-10">6-10 years</option>
+              <option value="10+">10+ years</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="motivation" className="block text-sm font-medium text-gray-300 mb-2">
+            Why do you want to join VIVIDSENSE? *
+          </label>
+          <textarea
+            id="motivation"
+            name="motivation"
+            rows={3}
+            required
+            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-vertical text-white placeholder-gray-400"
+            placeholder="Tell us about your passion for accessibility and how you'd contribute to our mission..."
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
+        >
+          Submit Application
+        </button>
+      </form>
+    </div>
+  </div>
 </section>
 
 {/* Footer */}

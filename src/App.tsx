@@ -595,7 +595,7 @@ View All Products
 <div className="bg-gray-800 aspect-square rounded-lg flex items-center justify-center border border-gray-700 overflow-hidden">
 <div className="bg-gray-800 aspect-square rounded-lg flex items-center justify-center border border-gray-700 overflow-hidden">
   <img
-    src="tssing5.png"
+    src="/tssing5.png"
     alt="VividSense Sourounding scanner"
     className="w-full h-full object-cover"
   />

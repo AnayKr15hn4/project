@@ -480,7 +480,7 @@ and independence for the visually impaired community worldwide.
 <div className="text-gray-300">Support availability</div>
 </div>
 <div>
-<div className="text-3xl font-bold text-blue-400 mb-2">&gt$1000</div>
+<div className="text-3xl font-bold text-blue-400 mb-2">$1000</div>
 <div className="text-gray-300">Affordable pricing</div>
 </div>
 </div>

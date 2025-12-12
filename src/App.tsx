@@ -343,8 +343,7 @@ Navigate the World with
 </h1>
 
 <p className="scroll-animate text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed" style={{ transitionDelay: '200ms' }}>
-Our smart glasses use a forward-facing camera and on-device AI to detect obstacles, recognize objects,
-and deliver clear spoken alerts through a discreet earpiece, helping users navigate safely and independently.
+affordable assistive technology that helps people move confidently, stay independent, and handle everyday tasks—using smart, accessible designs that don’t require expensive equipment.
 </p>
 
 <div className="scroll-animate flex flex-col sm:flex-row gap-4 justify-center mb-12" style={{ transitionDelay: '400ms' }}>
@@ -371,7 +370,7 @@ About VividSense
 </h2>
 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
 We are dedicated to empowering independence through innovative assistive technology. 
-Our mission is to enhance mobility and confidence for the visually impaired community worldwide.
+Our mission is to enhance mobility and confidence for the physicaly impaired community worldwide.
 </p>
 </div>
 
@@ -417,8 +416,8 @@ We believe technology should adapt to people, not the other way around.
 </div>
 <h3 className="text-2xl font-bold text-white mb-4">Community-Driven Development</h3>
 <p className="text-gray-300 mb-4">
-We work closely with orientation and mobility specialists, accessibility advocates, 
-and users to ensure our technology meets real-world needs.
+We work closely with the disabled community 
+and users of our products to ensure our technology meets real-world needs.
 </p>
 <ul className="space-y-2 text-gray-300">
 <li className="flex items-start">
@@ -427,7 +426,7 @@ Regular user feedback sessions
 </li>
 <li className="flex items-start">
 <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-Partnership with accessibility organizations
+Partnership with users
 </li>
 <li className="flex items-start">
 <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -440,23 +439,22 @@ Continuous improvement based on real usage
 <div className="bg-blue-900/30 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
 <Shield className="h-6 w-6 text-blue-600" aria-hidden="true" />
 </div>
-<h3 className="text-2xl font-bold text-white mb-4">Privacy & Security First</h3>
+<h3 className="text-2xl font-bold text-white mb-4">Our Goals & Guarantees</h3>
 <p className="text-gray-300 mb-4">
-Your privacy is paramount. All processing happens locally on the device, 
-ensuring your personal information and location data remain secure.
+We strive to create the best customer and user experience without products and if you are not content with you product there is a 100% money back guarantee.
 </p>
 <ul className="space-y-2 text-gray-300">
 <li className="flex items-start">
 <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-No data transmitted to external servers
+Rree returns 
 </li>
 <li className="flex items-start">
 <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-End-to-end encryption for all communications
+Avalable updates
 </li>
 <li className="flex items-start">
 <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-GDPR and accessibility compliance
+Requested feedback
 </li>
 </ul>
 </div>
@@ -470,11 +468,11 @@ and independence for the visually impaired community worldwide.
 </p>
 <div className="grid md:grid-cols-4 gap-8">
 <div>
-<div className="text-3xl font-bold text-blue-400 mb-2">100K+</div>
+<div className="text-3xl font-bold text-blue-400 mb-2">10K+</div>
 <div className="text-gray-300">Users by 2027</div>
 </div>
 <div>
-<div className="text-3xl font-bold text-blue-400 mb-2">50+</div>
+<div className="text-3xl font-bold text-blue-400 mb-2">10+</div>
 <div className="text-gray-300">Countries served</div>
 </div>
 <div>
@@ -482,7 +480,7 @@ and independence for the visually impaired community worldwide.
 <div className="text-gray-300">Support availability</div>
 </div>
 <div>
-<div className="text-3xl font-bold text-blue-400 mb-2">$79</div>
+<div className="text-3xl font-bold text-blue-400 mb-2">>$1000</div>
 <div className="text-gray-300">Affordable pricing</div>
 </div>
 </div>
@@ -513,7 +511,7 @@ to enhance independence and mobility for the visually impaired community.
 </div>
 <h3 className="text-lg font-semibold text-white mb-2">GPS Navigation</h3>
 <p className="text-gray-300 text-sm">
-Turn-by-turn directions with obstacle detection and safe route optimization.
+Turn-by-turn directions with obstacle detection and safe route optimization. (coming soon)
 </p>
 </div>
 
@@ -523,7 +521,7 @@ Turn-by-turn directions with obstacle detection and safe route optimization.
 </div>
 <h3 className="text-lg font-semibold text-white mb-2">Object Recognition</h3>
 <p className="text-gray-300 text-sm">
-Instant identification of people, objects, and obstacles using a forward-facing camera; spoken alerts are delivered via a discreet earpiece.
+Instant identification of people, objects, and obstacles using a forward-facing camera.
 </p>
 </div>
 
@@ -531,9 +529,9 @@ Instant identification of people, objects, and obstacles using a forward-facing 
 <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
 <Users className="h-6 w-6 text-blue-600" aria-hidden="true" />
 </div>
-<h3 className="text-lg font-semibold text-white mb-2">Text Reading</h3>
+<h3 className="text-lg font-semibold text-white mb-2">Distance Alerts</h3>
 <p className="text-gray-300 text-sm">
-Read signs, menus, documents, and labels aloud in natural voice.
+Alerts user when a dangerous distance is detected.
 </p>
 </div>
 
@@ -543,7 +541,7 @@ Read signs, menus, documents, and labels aloud in natural voice.
 </div>
 <h3 className="text-lg font-semibold text-white mb-2">Safety Alerts</h3>
 <p className="text-gray-300 text-sm">
-Proactive spoken warnings about low-hanging objects, steps, and potential hazards delivered through the earpiece.
+Proactive haptic warnings about low-hanging objects, steps, and potential hazards delivered through the earpiece.
 </p>
 </div>
 </div>
@@ -627,11 +625,11 @@ Stay informed about our latest developments, feature releases, and community mil
 <div className="bg-green-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
 <Star className="h-5 w-5 text-green-600" aria-hidden="true" />
 </div>
-<span className="text-sm text-gray-400">March 2025</span>
+<span className="text-sm text-gray-400">December 2025</span>
 </div>
-<h3 className="text-lg font-semibold text-white mb-2">AI Recognition Update</h3>
+<h3 className="text-lg font-semibold text-white mb-2">Dexarm V2</h3>
 <p className="text-gray-300 text-sm">
-Enhanced object recognition with 40% improved accuracy and support for 200+ new object categories.
+The Dexarm version 2 is in progress.
 </p>
 </div>
 
@@ -640,11 +638,11 @@ Enhanced object recognition with 40% improved accuracy and support for 200+ new 
 <div className="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
 <Navigation className="h-5 w-5 text-blue-600" aria-hidden="true" />
 </div>
-<span className="text-sm text-gray-400">February 2025</span>
+<span className="text-sm text-gray-400">september 2025</span>
 </div>
-<h3 className="text-lg font-semibold text-white mb-2">Indoor Navigation</h3>
+<h3 className="text-lg font-semibold text-white mb-2">The SS V3</h3>
 <p className="text-gray-300 text-sm">
-New indoor mapping technology now available in 500+ shopping centers and public buildings.
+The surrounding scanner is getting a makeover.
 </p>
 </div>
 
@@ -653,11 +651,11 @@ New indoor mapping technology now available in 500+ shopping centers and public 
 <div className="bg-purple-100 w-10 h-10 rounded-full flex items-center justify-center mr-3">
 <Users className="h-5 w-5 text-purple-600" aria-hidden="true" />
 </div>
-<span className="text-sm text-gray-400">January 2025</span>
+<span className="text-sm text-gray-400">Aprill 2025</span>
 </div>
 <h3 className="text-lg font-semibold text-white mb-2">Community Milestone</h3>
 <p className="text-gray-300 text-sm">
-Reached 10,000 active users worldwide with 98% satisfaction rate and 15M+ safe navigation miles.
+Placed 2nd out of 42 teams in our schools SB Launch (still chasing the top spot).
 </p>
 </div>
 </div>
@@ -672,13 +670,13 @@ Reached 10,000 active users worldwide with 98% satisfaction rate and 15M+ safe n
 <div className="bg-yellow-100 w-8 h-8 rounded-full flex items-center justify-center mr-3">
 <Eye className="h-4 w-4 text-yellow-600" aria-hidden="true" />
 </div>
-<span className="text-gray-300">Multi-language support (12 languages)</span>
+<span className="text-gray-300">The search for sponsors has started</span>
 </div>
 <div className="flex items-center">
 <div className="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center mr-3">
 <Shield className="h-4 w-4 text-green-600" aria-hidden="true" />
 </div>
-<span className="text-gray-300">Advanced weather detection</span>
+<span className="text-gray-300">Advanced weather protection</span>
 </div>
 </div>
 </div>
@@ -840,7 +838,7 @@ Our mission is to enhance mobility and confidence for the visually impaired comm
 <div className="space-y-3 text-gray-300">
 <div className="flex items-center">
 <Phone className="h-4 w-4 mr-2 flex-shrink-0" aria-hidden="true" />
-<span>(732)-829-1158</span>
+<span>(732)-783-8350 *message key word "VividSense"</span>
 </div>
 <div className="flex items-center">
 <Mail className="h-4 w-4 mr-2 flex-shrink-0" aria-hidden="true" />

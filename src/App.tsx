@@ -851,6 +851,15 @@ Our mission is to enhance mobility and confidence for the visually impaired comm
 </div>
 </div>
 
+<div className="scroll-animate-right" style={{ transitionDelay: '300ms' }}>
+<h4 className="font-semibold text-gray-300 mb-4">Resources</h4>
+<div className="space-y-2">
+<button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left">User Guide</button>
+<button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left">Support Center</button>
+<button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left">Accessibility</button>
+<button className="text-gray-400 hover:text-white block transition-colors duration-200 bg-transparent border-none text-left">Privacy Policy</button>
+</div>
+</div>
 
 </div>
 

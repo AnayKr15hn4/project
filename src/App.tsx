@@ -26,8 +26,6 @@ import DexarmConfigurator from './components/DexarmConfigurator';
     }
   }
 
-  return null;
-}
 
 interface SuccessModalProps {
 isOpen: boolean;

@@ -4,7 +4,7 @@ import { Eye, Navigation, Shield, Users, Star, Phone, Mail, MapPin, ChevronRight
 import ProductConfigurator from './components/ProductConfigurator';
 import ProductsPage from './components/ProductsPage';
 import tssing5 from './tssing5.png';
-
+import DexarmConfigurator from './components/DexarmConfigurator';
 
 interface SuccessModalProps {
 isOpen: boolean;

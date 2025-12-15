@@ -6,24 +6,7 @@ import ProductsPage from './components/ProductsPage';
 import tssing5 from './tssing5.png';
 import DexarmConfigurator from './components/DexarmConfigurator';
 
-type Page =
-  | { view: 'products' }
-  | { view: 'configure'; productId: string };
 
-export default function App() {
-  const [page, setPage] = useState<Page>({ view: 'products' });
-
-  if (page.view === 'products') {
-    return (
-      <ProductsPage
-        onBackToHome={() => setPage({ view: 'products' })}
-        onSelectProduct={(productId) =>
-          setPage({ view: 'configure', productId })
-        }
-        scrollToSection={() => {}}
-      />
-    );
-  }
 
   if (page.view === 'configure') {
     if (page.productId === 'surrounding-scanner') {

@@ -46,7 +46,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
       ],
       available: true,
       // IMPORTANT: routes to the Surrounding Scanner configurator
-      configureTarget: 'surrounding-scanner',
+      configureTarget: 'dexarm',
     },
   ];
 

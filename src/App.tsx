@@ -6,6 +6,46 @@ import ProductsPage from './components/ProductsPage';
 import tssing5 from './tssing5.png';
 import DexarmConfigurator from './components/DexarmConfigurator';
 
+type Page =
+  | { view: 'products' }
+  | { view: 'configure'; productId: string };
+
+export default function App() {
+  const [page, setPage] = useState<Page>({ view: 'products' });
+
+  if (page.view === 'products') {
+    return (
+      <ProductsPage
+        onBackToHome={() => setPage({ view: 'products' })}
+        onSelectProduct={(productId) =>
+          setPage({ view: 'configure', productId })
+        }
+        scrollToSection={() => {}}
+      />
+    );
+  }
+
+  if (page.view === 'configure') {
+    if (page.productId === 'surrounding-scanner') {
+      return (
+        <ProductConfigurator
+          onBack={() => setPage({ view: 'products' })}
+        />
+      );
+    }
+
+    if (page.productId === 'dexarm') {
+      return (
+        <DexarmConfigurator
+          onBack={() => setPage({ view: 'products' })}
+        />
+      );
+    }
+  }
+
+  return null;
+}
+
 interface SuccessModalProps {
 isOpen: boolean;
 onClose: () => void;
@@ -269,40 +309,7 @@ Products
 </span>
 </div>
 
-       if (currentView === 'dexarm') {
-  return (
-    <div className="min-h-screen bg-black">
-      {/* Header for Dexarm Page */}
-      <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
-        <nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
-          <div className="flex justify-between items-center">
-            <button 
-              onClick={() => setCurrentView('home')}
-              className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
-            >
-              <Eye className="h-8 w-8 text-blue-600 mr-3" />
-              <span className="text-2xl font-bold text-white">VividSense</span>
-            </button>
 
-            <div className="hidden md:flex space-x-8">
-              <button 
-                onClick={() => setCurrentView('home')}
-                className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
-              >
-                Home
-              </button>
-              <span className="text-blue-400 font-medium">
-                Dexarm
-              </span>
-            </div>
-          </div>
-        </nav>
-      </header>
-
-      <DexarmConfigurator />
-    </div>
-  );
-}
 
 </div>
 </nav>

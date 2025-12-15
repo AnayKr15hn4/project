@@ -269,6 +269,40 @@ Products
 </span>
 </div>
 
+       if (currentView === 'dexarm') {
+  return (
+    <div className="min-h-screen bg-black">
+      {/* Header for Dexarm Page */}
+      <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
+        <nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
+          <div className="flex justify-between items-center">
+            <button 
+              onClick={() => setCurrentView('home')}
+              className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
+            >
+              <Eye className="h-8 w-8 text-blue-600 mr-3" />
+              <span className="text-2xl font-bold text-white">VividSense</span>
+            </button>
+
+            <div className="hidden md:flex space-x-8">
+              <button 
+                onClick={() => setCurrentView('home')}
+                className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+              >
+                Home
+              </button>
+              <span className="text-blue-400 font-medium">
+                Dexarm
+              </span>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <DexarmConfigurator />
+    </div>
+  );
+}
 
 </div>
 </nav>

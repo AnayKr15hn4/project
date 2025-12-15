@@ -17,7 +17,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
       id: 'surrounding-scanner',
       name: 'The Surrounding Scanner',
       description:
-        'A wearable system with a forward-facing camera and on-device AI that detects obstacles and provides real-time spoken alerts through a discreet earpiece.',
+        'A wearable system with a forward-facing camera and on-board AI that detects obstacles and provides real-time alerts.',
       startingPrice: 79,
       color: 'blue',
       icon: Eye,

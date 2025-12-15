@@ -112,7 +112,7 @@ Continue Exploring
 };
 
 function App() {
-const [currentView, setCurrentView] = React.useState<'home' | 'product' | 'products'>('home');
+const [currentView, setCurrentView] = React.useState<'home' | 'product' | 'products' | 'dexarm' >('home');
 const [successModal, setSuccessModal] = React.useState<{
 isOpen: boolean;
 firstName: string;

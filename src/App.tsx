@@ -8,25 +8,7 @@ import DexarmConfigurator from './components/DexarmConfigurator';
 
 
 
-  if (page.view === 'configure') {
-    if (page.productId === 'surrounding-scanner') {
-      return (
-        <ProductConfigurator
-          onBack={() => setPage({ view: 'products' })}
-        />
-      );
-    }
-
-    if (page.productId === 'dexarm') {
-      return (
-        <DexarmConfigurator
-          onBack={() => setPage({ view: 'products' })}
-        />
-      );
-    }
-  }
-
-  return null;
+ 
 
 
 interface SuccessModalProps {

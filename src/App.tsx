@@ -371,12 +371,7 @@ About Us
               {/* Dropdown Menu */}
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="bg-gray-900/95 backdrop-blur-md border border-gray-700 rounded-lg shadow-xl py-2 px-1 min-w-[140px]">
-                  <button 
-                    onClick={() => scrollToSection('apply')}
-                    className="w-full text-left text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer px-4 py-2 rounded"
-                  >
-                    Apply
-                  </button>
+                  
                   <button 
                     onClick={() => setCurrentView('products')}
                     className="w-full text-left text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer px-4 py-2 rounded"

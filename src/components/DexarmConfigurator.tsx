@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Hand, Cpu, Battery, ChevronLeft, ChevronRight, Check } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface DexarmConfig {
   controlSystem: 'mechanical' | 'myoelectric';
@@ -12,6 +13,7 @@ interface DexarmConfig {
 }
 
 const DexarmConfigurator: React.FC = () => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(0);
   const [config, setConfig] = useState<DexarmConfig>({
     controlSystem: 'mechanical',
@@ -45,7 +47,17 @@ const DexarmConfigurator: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black pt-32 pb-20">
-      {/* Hero */}
+      {/* Back Button */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <button
+          onClick={() => navigate('/product')} // update to actual product page route
+          className="px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 flex items-center"
+        >
+          <ChevronLeft className="h-5 w-5 mr-2" /> Back to Product Page
+        </button>
+      </div>
+
+      {/* Hero Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
         <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
           Configure <span className="text-purple-400">Dexarm</span>
@@ -63,9 +75,7 @@ const DexarmConfigurator: React.FC = () => {
               key={page}
               onClick={() => setCurrentPage(i)}
               className={`px-6 py-3 rounded-full font-medium transition-colors duration-200 ${
-                currentPage === i
-                  ? 'bg-purple-600 text-white'
-                  : 'text-gray-300 hover:text-purple-400'
+                currentPage === i ? 'bg-purple-600 text-white' : 'text-gray-300 hover:text-purple-400'
               }`}
               style={{ zIndex: 1000, position: 'relative' }}
             >
@@ -87,24 +97,15 @@ const DexarmConfigurator: React.FC = () => {
                     <Cpu className="h-8 w-8 text-purple-400 mr-3" />
                     <h2 className="text-3xl font-bold text-white">Control System</h2>
                   </div>
-                  {[{
-                    id: 'mechanical',
-                    label: 'Mechanical',
-                    desc: 'Body-powered, durable, low maintenance',
-                    price: 'Included',
-                  },{
-                    id: 'myoelectric',
-                    label: 'Myoelectric',
-                    desc: 'Muscle-signal controlled, natural movement',
-                    price: '+$600',
-                  }].map(opt => (
+                  {[
+                    { id: 'mechanical', label: 'Mechanical', desc: 'Body-powered, durable, low maintenance', price: 'Included' },
+                    { id: 'myoelectric', label: 'Myoelectric', desc: 'Muscle-signal controlled, natural movement', price: '+$600' },
+                  ].map(opt => (
                     <div
                       key={opt.id}
                       onClick={() => setConfig(prev => ({ ...prev, controlSystem: opt.id as any }))}
                       className={`p-6 mb-4 rounded-xl border-2 cursor-pointer ${
-                        config.controlSystem === opt.id
-                          ? 'border-purple-500 bg-purple-900/20'
-                          : 'border-gray-700 bg-gray-800 hover:border-gray-600'
+                        config.controlSystem === opt.id ? 'border-purple-500 bg-purple-900/20' : 'border-gray-700 bg-gray-800 hover:border-gray-600'
                       }`}
                     >
                       <div className="flex justify-between items-center">
@@ -136,9 +137,7 @@ const DexarmConfigurator: React.FC = () => {
                       key={opt.id}
                       onClick={() => setConfig(prev => ({ ...prev, gripType: opt.id as any }))}
                       className={`p-6 mb-4 rounded-xl border-2 cursor-pointer ${
-                        config.gripType === opt.id
-                          ? 'border-purple-500 bg-purple-900/20'
-                          : 'border-gray-700 bg-gray-800 hover:border-gray-600'
+                        config.gripType === opt.id ? 'border-purple-500 bg-purple-900/20' : 'border-gray-700 bg-gray-800 hover:border-gray-600'
                       }`}
                     >
                       <div className="flex justify-between items-center">
@@ -163,15 +162,10 @@ const DexarmConfigurator: React.FC = () => {
 
                   <div
                     className={`p-6 mb-4 rounded-xl border-2 cursor-pointer ${
-                      config.battery === 'extended'
-                        ? 'border-purple-500 bg-purple-900/20'
-                        : 'border-gray-700 bg-gray-800 hover:border-gray-600'
+                      config.battery === 'extended' ? 'border-purple-500 bg-purple-900/20' : 'border-gray-700 bg-gray-800 hover:border-gray-600'
                     }`}
                     onClick={() =>
-                      setConfig(prev => ({
-                        ...prev,
-                        battery: prev.battery === 'standard' ? 'extended' : 'standard',
-                      }))
+                      setConfig(prev => ({ ...prev, battery: prev.battery === 'standard' ? 'extended' : 'standard' }))
                     }
                   >
                     <h3 className="text-xl font-semibold text-white">Extended Battery (+$200)</h3>
@@ -185,9 +179,7 @@ const DexarmConfigurator: React.FC = () => {
                     <div
                       key={opt.key}
                       className={`p-6 mb-4 rounded-xl border-2 cursor-pointer ${
-                        config.materials[opt.key as keyof DexarmConfig['materials']]
-                          ? 'border-purple-500 bg-purple-900/20'
-                          : 'border-gray-700 bg-gray-800 hover:border-gray-600'
+                        config.materials[opt.key as keyof DexarmConfig['materials']] ? 'border-purple-500 bg-purple-900/20' : 'border-gray-700 bg-gray-800 hover:border-gray-600'
                       }`}
                       onClick={() => handleMaterialToggle(opt.key as keyof DexarmConfig['materials'])}
                     >
@@ -203,9 +195,7 @@ const DexarmConfigurator: React.FC = () => {
                   onClick={goToPrevPage}
                   disabled={currentPage === 0}
                   className={`flex items-center px-6 py-3 rounded-full font-medium transition-colors ${
-                    currentPage === 0
-                      ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                      : 'bg-gray-700 text-white hover:bg-gray-600'
+                    currentPage === 0 ? 'bg-gray-800 text-gray-500 cursor-not-allowed' : 'bg-gray-700 text-white hover:bg-gray-600'
                   }`}
                 >
                   <ChevronLeft className="h-5 w-5 mr-2" />
@@ -215,9 +205,7 @@ const DexarmConfigurator: React.FC = () => {
                   onClick={goToNextPage}
                   disabled={currentPage === pages.length - 1}
                   className={`flex items-center px-6 py-3 rounded-full font-medium transition-colors ${
-                    currentPage === pages.length - 1
-                      ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                      : 'bg-purple-600 text-white hover:bg-purple-700'
+                    currentPage === pages.length - 1 ? 'bg-gray-800 text-gray-500 cursor-not-allowed' : 'bg-purple-600 text-white hover:bg-purple-700'
                   }`}
                 >
                   Next

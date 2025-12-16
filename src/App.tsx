@@ -353,8 +353,6 @@ return (
     aria-label="Main navigation"
   >
     <div className="flex justify-between items-center">
-
-      {/* Logo */}
       <button
         onClick={() => scrollToSection('hero')}
         className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
@@ -363,9 +361,7 @@ return (
         <span className="text-2xl font-bold text-white">VividSense</span>
       </button>
 
-      {/* Desktop Nav */}
       <div className="hidden md:flex space-x-8">
-
         <button
           onClick={() => scrollToSection('about')}
           className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
@@ -407,11 +403,11 @@ return (
         >
           Apply
         </button>
-
       </div>
     </div>
   </nav>
 </header>
+
 {/* Hero Section */}
 <section id="hero" className="relative bg-gradient-to-b from-gray-900 to-black min-h-screen flex items-center justify-center pt-20 overflow-hidden" role="banner">
 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-blue-800/10"></div>

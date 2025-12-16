@@ -177,14 +177,18 @@ setCurrentView('products');
 };
 
 const handleSelectProduct = (productId: string) => {
-// For now, only "surrounding-scanner" goes to configurator
-// Other products can be handled here when their configurators are ready
-if (productId === 'surrounding-scanner') {
-setCurrentView('product');
-} else {
-alert(`${productId} configurator coming soon! Contact us for early access.`);
-}
+  switch (productId) {
+    case 'surrounding-scanner':
+      setCurrentView('product');
+      break;
+    case 'dexarm':
+      setCurrentView('dexarm');
+      break;
+    default:
+      alert(`${productId} configurator coming soon! Contact us for early access.`);
+  }
 };
+
 
 // Application form removed in favor of Google Form link
 
@@ -289,6 +293,30 @@ scrollToSection={scrollToSection}
 );
 }
 
+if (currentView === 'dexarm') {
+  return (
+    <div className="min-h-screen bg-black">
+      {/* Header */}
+      <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
+        <nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
+          <div className="flex justify-between items-center">
+            <button 
+              onClick={() => setCurrentView('home')}
+              className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
+            >
+              <Eye className="h-8 w-8 text-blue-600 mr-3" />
+              <span className="text-2xl font-bold text-white">VividSense</span>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <DexarmConfigurator />
+    </div>
+  );
+}
+
+ 
 return (
 <div className="min-h-screen bg-black">
 {/* Header */}

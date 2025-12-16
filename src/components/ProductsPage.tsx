@@ -36,7 +36,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
       description:
         'An affordable prosthetic arm designed to restore essential arm and hand functionality for everyday tasks.',
       startingPrice: 1000,
-      color: 'purple',
+      color: 'blue',
       icon: Shield,
       features: [
         'Modular prosthetic arm with interchangeable grip attachments',

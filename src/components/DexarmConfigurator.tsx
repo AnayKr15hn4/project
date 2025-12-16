@@ -48,7 +48,7 @@ const DexarmConfigurator: React.FC = () => {
       {/* Hero */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
         <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-          Configure <span className="text-purple-400">Dexarm</span>
+          Configure <span className="text-blue-400">Dexarm</span>
         </h1>
         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
           Customize your prosthetic arm for control, strength, and daily reliability.
@@ -64,8 +64,8 @@ const DexarmConfigurator: React.FC = () => {
               onClick={() => setCurrentPage(i)}
               className={`px-6 py-3 rounded-full font-medium transition-colors duration-200 ${
                 currentPage === i
-                  ? 'bg-purple-600 text-white'
-                  : 'text-gray-300 hover:text-purple-400'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-300 hover:text-blue-400'
               }`}
               style={{ zIndex: 1000, position: 'relative' }}
             >
@@ -84,7 +84,7 @@ const DexarmConfigurator: React.FC = () => {
               {currentPage === 0 && (
                 <div>
                   <div className="flex items-center mb-6">
-                    <Cpu className="h-8 w-8 text-purple-400 mr-3" />
+                    <Cpu className="h-8 w-8 text-blue-400 mr-3" />
                     <h2 className="text-3xl font-bold text-white">Control System</h2>
                   </div>
                   {[{
@@ -103,7 +103,7 @@ const DexarmConfigurator: React.FC = () => {
                       onClick={() => setConfig(prev => ({ ...prev, controlSystem: opt.id as any }))}
                       className={`p-6 mb-4 rounded-xl border-2 cursor-pointer ${
                         config.controlSystem === opt.id
-                          ? 'border-purple-500 bg-purple-900/20'
+                          ? 'border-blue-500 bg-blue-900/20'
                           : 'border-gray-700 bg-gray-800 hover:border-gray-600'
                       }`}
                     >
@@ -111,9 +111,9 @@ const DexarmConfigurator: React.FC = () => {
                         <div>
                           <h3 className="text-xl font-semibold text-white">{opt.label}</h3>
                           <p className="text-gray-300">{opt.desc}</p>
-                          <span className="text-purple-400">{opt.price}</span>
+                          <span className="text-blue-400">{opt.price}</span>
                         </div>
-                        {config.controlSystem === opt.id && <Check className="h-5 w-5 text-purple-400" />}
+                        {config.controlSystem === opt.id && <Check className="h-5 w-5 text-blue-400" />}
                       </div>
                     </div>
                   ))}
@@ -124,7 +124,7 @@ const DexarmConfigurator: React.FC = () => {
               {currentPage === 1 && (
                 <div>
                   <div className="flex items-center mb-6">
-                    <Hand className="h-8 w-8 text-purple-400 mr-3" />
+                    <Hand className="h-8 w-8 text-blue-400 mr-3" />
                     <h2 className="text-3xl font-bold text-white">Grip Type</h2>
                   </div>
                   {[
@@ -137,16 +137,16 @@ const DexarmConfigurator: React.FC = () => {
                       onClick={() => setConfig(prev => ({ ...prev, gripType: opt.id as any }))}
                       className={`p-6 mb-4 rounded-xl border-2 cursor-pointer ${
                         config.gripType === opt.id
-                          ? 'border-purple-500 bg-purple-900/20'
+                          ? 'border-blue-500 bg-blue-900/20'
                           : 'border-gray-700 bg-gray-800 hover:border-gray-600'
                       }`}
                     >
                       <div className="flex justify-between items-center">
                         <div>
                           <h3 className="text-xl font-semibold text-white">{opt.label}</h3>
-                          <span className="text-purple-400">{opt.price}</span>
+                          <span className="text-blue-400">{opt.price}</span>
                         </div>
-                        {config.gripType === opt.id && <Check className="h-5 w-5 text-purple-400" />}
+                        {config.gripType === opt.id && <Check className="h-5 w-5 text-blue-400" />}
                       </div>
                     </div>
                   ))}
@@ -157,14 +157,14 @@ const DexarmConfigurator: React.FC = () => {
               {currentPage === 2 && (
                 <div>
                   <div className="flex items-center mb-6">
-                    <Battery className="h-8 w-8 text-purple-400 mr-3" />
+                    <Battery className="h-8 w-8 text-blue-400 mr-3" />
                     <h2 className="text-3xl font-bold text-white">Build Options</h2>
                   </div>
 
                   <div
                     className={`p-6 mb-4 rounded-xl border-2 cursor-pointer ${
                       config.battery === 'extended'
-                        ? 'border-purple-500 bg-purple-900/20'
+                        ? 'border-blue-500 bg-blue-900/20'
                         : 'border-gray-700 bg-gray-800 hover:border-gray-600'
                     }`}
                     onClick={() =>
@@ -186,7 +186,7 @@ const DexarmConfigurator: React.FC = () => {
                       key={opt.key}
                       className={`p-6 mb-4 rounded-xl border-2 cursor-pointer ${
                         config.materials[opt.key as keyof DexarmConfig['materials']]
-                          ? 'border-purple-500 bg-purple-900/20'
+                          ? 'border-blue-500 bg-blue-900/20'
                           : 'border-gray-700 bg-gray-800 hover:border-gray-600'
                       }`}
                       onClick={() => handleMaterialToggle(opt.key as keyof DexarmConfig['materials'])}
@@ -217,7 +217,7 @@ const DexarmConfigurator: React.FC = () => {
                   className={`flex items-center px-6 py-3 rounded-full font-medium transition-colors ${
                     currentPage === pages.length - 1
                       ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                      : 'bg-purple-600 text-white hover:bg-purple-700'
+                      : 'bg-blue-600 text-white hover:bg-blue-700'
                   }`}
                 >
                   Next
@@ -257,7 +257,7 @@ const DexarmConfigurator: React.FC = () => {
 
               <div className="border-t border-gray-700 pt-6 flex justify-between items-center">
                 <span className="text-xl font-semibold text-white">Total Price</span>
-                <span className="text-3xl font-bold text-purple-400">${calculatePrice()}</span>
+                <span className="text-3xl font-bold text-blue-400">${calculatePrice()}</span>
               </div>
             </div>
           </div>

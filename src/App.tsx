@@ -273,9 +273,12 @@ className="text-gray-300 hover:text-blue-400 font-medium transition-colors durat
 >
 Home
 </button>
-<span className="text-blue-400 font-medium">
-Products
-</span>
+<button 
+onClick={() => setCurrentView('product')}
+className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+>
+All Products
+</button>
 </div>
 
 
@@ -314,9 +317,12 @@ if (currentView === 'dexarm') {
        >
        Home
        </button>
-       <span className="text-blue-400 font-medium">
-       Products
-       </span>
+       <button 
+       onClick={() => setCurrentView('product')}
+       className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+       >
+        All Products
+       </button>
        </div>
    </div>
    </nav>

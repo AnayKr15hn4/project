@@ -21,7 +21,7 @@ firstName: string;
 type: 'application' | 'contact';
 }
 
-const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
 
 const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, firstName, type }) => {
 if (!isOpen) return null;
@@ -122,6 +122,7 @@ Continue Exploring
 };
 
 function App() {
+const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 const [currentView, setCurrentView] = React.useState<'home' | 'product' | 'products' | 'dexarm' >('home');
 const [successModal, setSuccessModal] = React.useState<{
 isOpen: boolean;

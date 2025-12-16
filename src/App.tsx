@@ -282,7 +282,7 @@ className="text-gray-300 hover:text-blue-400 font-medium transition-colors durat
 Home
 </button>
 <span className="text-blue-400 font-medium">
-Product
+Catalog
 </span>
 </div>
 

@@ -358,7 +358,7 @@ return (
       {/* Logo */}
       <button
         onClick={() => scrollToSection('hero')}
-        className="flex items-center bg-transparent border-none cursor-pointer"
+        className="flex items-center bg-transparent border-none cursor-pointer hover:opacity-80 transition-opacity"
       >
         <Eye className="h-8 w-8 text-blue-600 mr-3" />
         <span className="text-2xl font-bold text-white">VividSense</span>
@@ -366,20 +366,26 @@ return (
 
       {/* Desktop Nav */}
       <div className="hidden md:flex space-x-8">
-        <button onClick={() => scrollToSection('about')} className="nav-btn">
+        <button
+          onClick={() => scrollToSection('about')}
+          className="text-gray-300 hover:text-blue-400 font-medium transition-colors bg-transparent border-none cursor-pointer"
+        >
           About Us
         </button>
 
         <div className="relative group">
-          <button onClick={() => scrollToSection('product')} className="nav-btn">
+          <button
+            onClick={() => scrollToSection('product')}
+            className="text-gray-300 hover:text-blue-400 font-medium transition-colors bg-transparent border-none cursor-pointer"
+          >
             Product
           </button>
 
-          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
             <div className="bg-gray-900/95 border border-gray-700 rounded-lg shadow-xl py-2 min-w-[140px]">
               <button
                 onClick={() => setCurrentView('products')}
-                className="w-full text-left nav-btn px-4 py-2"
+                className="w-full text-left text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 font-medium transition-colors bg-transparent border-none cursor-pointer px-4 py-2 rounded"
               >
                 Catalog
               </button>
@@ -387,18 +393,24 @@ return (
           </div>
         </div>
 
-        <button onClick={() => scrollToSection('updates')} className="nav-btn">
+        <button
+          onClick={() => scrollToSection('updates')}
+          className="text-gray-300 hover:text-blue-400 font-medium transition-colors bg-transparent border-none cursor-pointer"
+        >
           Updates
         </button>
 
-        <button onClick={() => scrollToSection('apply')} className="nav-btn">
+        <button
+          onClick={() => scrollToSection('apply')}
+          className="text-gray-300 hover:text-blue-400 font-medium transition-colors bg-transparent border-none cursor-pointer"
+        >
           Apply
         </button>
       </div>
 
       {/* Mobile Hamburger */}
       <button
-        className="md:hidden text-gray-300 hover:text-white"
+        className="md:hidden text-gray-300 hover:text-white transition-colors"
         onClick={() => setMobileMenuOpen(true)}
         aria-label="Open menu"
       >
@@ -409,7 +421,7 @@ return (
   </nav>
 </header>
 
- {mobileMenuOpen && (
+{mobileMenuOpen && (
   <div className="fixed inset-0 z-[1000000] bg-black/80 backdrop-blur-sm md:hidden">
     <div className="absolute top-6 right-6">
       <button onClick={() => setMobileMenuOpen(false)}>

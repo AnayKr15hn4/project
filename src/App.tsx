@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 import { Eye, Navigation, Shield, Users, Star, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
 import ProductConfigurator from './components/ProductConfigurator';
 import ProductsPage from './components/ProductsPage';
@@ -19,6 +20,8 @@ onClose: () => void;
 firstName: string;
 type: 'application' | 'contact';
 }
+
+const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
 const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, firstName, type }) => {
 if (!isOpen) return null;
@@ -344,60 +347,94 @@ return (
 <div className="min-h-screen bg-black">
 {/* Header */}
 <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-[999999] w-full max-w-4xl px-4">
-<nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3" role="navigation" aria-label="Main navigation">
-<div className="flex justify-between items-center">
-<button 
-onClick={() => scrollToSection('hero')}
-className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
->
-<Eye className="h-8 w-8 text-blue-600 mr-3" aria-hidden="true" />
-<span className="text-2xl font-bold text-white">VividSense</span>
-</button>
-<div className="hidden md:flex space-x-8">
-<button 
-onClick={() => scrollToSection('about')}
-className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
->
-About Us
-</button>
-<div className="relative group">
-              <button 
-                onClick={() => scrollToSection('product')}
-                className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
-              >
-                Product
-              </button>
-              
-              {/* Dropdown Menu */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="bg-gray-900/95 backdrop-blur-md border border-gray-700 rounded-lg shadow-xl py-2 px-1 min-w-[140px]">
-                  
-                  <button 
-                    onClick={() => setCurrentView('products')}
-                    className="w-full text-left text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer px-4 py-2 rounded"
-                  >
-                    Catalog
-                  </button>
-                </div>
-              </div>
-            </div>
+  <nav
+    className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3"
+    role="navigation"
+    aria-label="Main navigation"
+  >
+    <div className="flex justify-between items-center">
 
-<button 
-onClick={() => scrollToSection('updates')}
-className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
->
-Updates
-</button>
-<button 
-onClick={() => scrollToSection('apply')}
-className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
->
-Apply
-</button>
-</div>
-</div>
-</nav>
+      {/* Logo */}
+      <button
+        onClick={() => scrollToSection('hero')}
+        className="flex items-center bg-transparent border-none cursor-pointer"
+      >
+        <Eye className="h-8 w-8 text-blue-600 mr-3" />
+        <span className="text-2xl font-bold text-white">VividSense</span>
+      </button>
+
+      {/* Desktop Nav */}
+      <div className="hidden md:flex space-x-8">
+        <button onClick={() => scrollToSection('about')} className="nav-btn">
+          About Us
+        </button>
+
+        <div className="relative group">
+          <button onClick={() => scrollToSection('product')} className="nav-btn">
+            Product
+          </button>
+
+          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+            <div className="bg-gray-900/95 border border-gray-700 rounded-lg shadow-xl py-2 min-w-[140px]">
+              <button
+                onClick={() => setCurrentView('products')}
+                className="w-full text-left nav-btn px-4 py-2"
+              >
+                Catalog
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button onClick={() => scrollToSection('updates')} className="nav-btn">
+          Updates
+        </button>
+
+        <button onClick={() => scrollToSection('apply')} className="nav-btn">
+          Apply
+        </button>
+      </div>
+
+      {/* Mobile Hamburger */}
+      <button
+        className="md:hidden text-gray-300 hover:text-white"
+        onClick={() => setMobileMenuOpen(true)}
+        aria-label="Open menu"
+      >
+        <Menu className="h-7 w-7" />
+      </button>
+
+    </div>
+  </nav>
 </header>
+{mobileMenuOpen && (
+  <div className="fixed inset-0 z-[1000000] bg-black/80 backdrop-blur-sm md:hidden">
+    <div className="absolute top-6 right-6">
+      <button onClick={() => setMobileMenuOpen(false)}>
+        <X className="h-8 w-8 text-white" />
+      </button>
+    </div>
+
+    <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl text-white">
+      <button onClick={() => { scrollToSection('about'); setMobileMenuOpen(false); }}>
+        About Us
+      </button>
+      <button onClick={() => { scrollToSection('product'); setMobileMenuOpen(false); }}>
+        Product
+      </button>
+      <button onClick={() => { setCurrentView('products'); setMobileMenuOpen(false); }}>
+        Catalog
+      </button>
+      <button onClick={() => { scrollToSection('updates'); setMobileMenuOpen(false); }}>
+        Updates
+      </button>
+      <button onClick={() => { scrollToSection('apply'); setMobileMenuOpen(false); }}>
+        Apply
+      </button>
+    </div>
+  </div>
+)}
+
 {/* Hero Section */}
 <section id="hero" className="relative bg-gradient-to-b from-gray-900 to-black min-h-screen flex items-center justify-center pt-20 overflow-hidden" role="banner">
 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-blue-800/10"></div>

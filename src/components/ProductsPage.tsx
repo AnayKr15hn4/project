@@ -45,7 +45,6 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
         'Designed for accessibility and long-term affordability',
       ],
       available: true,
-      // IMPORTANT: routes to the Surrounding Scanner configurator
       configureTarget: 'dexarm',
     },
   ];
@@ -141,16 +140,17 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
                   </div>
                 </div>
 
-                <ul className="space-y-3 text-gray-300 mb-8">
+                {/* Feature List with Proper Bullets */}
+                <ul className="space-y-3 mb-8">
                   {product.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
                       <span
-                        className={`w-2 h-2 rounded-full mr-3 mt-2 ${colors.text.replace(
+                        className={`w-2.5 h-2.5 mt-1 flex-shrink-0 rounded-full ${colors.text.replace(
                           'text-',
                           'bg-'
                         )}`}
                       />
-                      <span className="text-sm">{feature}</span>
+                      <span className="ml-3 text-sm text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>

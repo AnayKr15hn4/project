@@ -369,6 +369,13 @@ className="text-gray-300 hover:text-blue-400 font-medium transition-colors durat
 Product
 </button>
 <button 
+onClick={() => setCurrentView('products')}
+className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+>
+Catalog
+</button>
+ 
+<button 
 onClick={() => scrollToSection('updates')}
 className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
 >

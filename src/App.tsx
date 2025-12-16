@@ -215,6 +215,7 @@ type: 'application'
 });
 };
 if (currentView === 'product') {
+ //sourounding scanner
 return (
 <div className="min-h-screen bg-black">
 {/* Header for Product Page */}
@@ -236,9 +237,13 @@ className="text-gray-300 hover:text-blue-400 font-medium transition-colors durat
 >
 Home
 </button>
-<span className="text-blue-400 font-medium">
-Product
-</span>
+ <button 
+onClick={() => setCurrentView('products')}
+className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+>
+All Products
+</button>
+
 </div>
 
 
@@ -252,6 +257,7 @@ Product
 }
 
 if (currentView === 'products') {
+ //product page
 return (
 <div className="min-h-screen bg-black">
 {/* Header for Products Page */}
@@ -273,12 +279,9 @@ className="text-gray-300 hover:text-blue-400 font-medium transition-colors durat
 >
 Home
 </button>
-<button 
-onClick={() => setCurrentView('product')}
-className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
->
-All Products
-</button>
+<span className="text-blue-400 font-medium">
+Product
+</span>
 </div>
 
 
@@ -318,7 +321,7 @@ if (currentView === 'dexarm') {
        Home
        </button>
        <button 
-       onClick={() => setCurrentView('product')}
+       onClick={() => setCurrentView('products')}
        className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
        >
         All Products

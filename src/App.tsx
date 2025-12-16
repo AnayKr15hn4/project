@@ -243,8 +243,8 @@ Home
 onClick={() => setCurrentView('products')}
 className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
 >
-All Products
-</button>
+Catalog
+ </button>
 
 </div>
 
@@ -326,7 +326,7 @@ if (currentView === 'dexarm') {
        onClick={() => setCurrentView('products')}
        className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
        >
-        All Products
+        Catalog
        </button>
        </div>
    </div>

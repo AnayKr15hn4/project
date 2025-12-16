@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { Eye, Navigation, Shield, Users, Star, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
 import ProductConfigurator from './components/ProductConfigurator';
 import ProductsPage from './components/ProductsPage';
+import ssShowcase from './components/productshow/ss';
+import dexShowcase from './components/productshow/dex';
 import tssing5 from './tssing5.png';
 import DexarmConfigurator from './components/DexarmConfigurator';
 

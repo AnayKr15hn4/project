@@ -144,8 +144,9 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
                 <ul className="space-y-3 mb-8">
                   {product.features.map((feature, i) => (
                     <li key={i} className="flex items-start">
+                      {/* Visible Dot */}
                       <span
-                        className={`w-2.5 h-2.5 mt-1 flex-shrink-0 rounded-full ${colors.text.replace(
+                        className={`inline-block w-2.5 h-2.5 mt-1 rounded-full flex-shrink-0 ${colors.text.replace(
                           'text-',
                           'bg-'
                         )}`}
@@ -154,6 +155,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
                     </li>
                   ))}
                 </ul>
+
 
                 <button
                   onClick={() => onSelectProduct(product.configureTarget)}

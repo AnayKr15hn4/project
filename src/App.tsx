@@ -224,156 +224,37 @@ if (currentView === 'product') {
  //sourounding scanner
 return (
 <div className="min-h-screen bg-black">
-{/* Header for Product Page */}
-<header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
-<nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
-<div className="flex justify-between items-center">
-<button 
-onClick={() => setCurrentView('home')}
-className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
->
-<Eye className="h-8 w-8 text-blue-600 mr-3" />
-<span className="text-2xl font-bold text-white">VividSense</span>
-</button>
-
-<div className="hidden md:flex space-x-8">
-<button 
-onClick={() => setCurrentView('home')}
-className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
->
-Home
-</button>
- <button 
-onClick={() => setCurrentView('products')}
-className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
->
-Catalog
- </button>
-
- {/* Mobile Hamburger */}
-<button
-  className="md:hidden text-gray-300 hover:text-white transition-colors"
-  onClick={() => setMobileMenuOpen(true)}
-  aria-label="Open menu"
->
-  <Menu className="h-7 w-7" />
-</button>
-
-
-</div>
-
-
-</div>
-</nav>
-
- 
-</header>
-
-<ProductConfigurator />
-</div>
-);
-}
-
-if (currentView === 'products') {
- //product page
 return (
-<div className="min-h-screen bg-black">
-{/* Header for Products Page */}
-<header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
-<nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
-<div className="flex justify-between items-center">
-<button 
-onClick={() => setCurrentView('home')}
-className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
->
-<Eye className="h-8 w-8 text-blue-600 mr-3" />
-<span className="text-2xl font-bold text-white">VividSense</span>
-</button>
-
-<div className="hidden md:flex space-x-8">
-<button 
-onClick={() => setCurrentView('home')}
-className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
->
-Home
-</button>
-<span className="text-blue-400 font-medium">
-Catalog
-</span>
-</div>
-
-{/* Mobile Hamburger */}
-<button
-  className="md:hidden text-gray-300 hover:text-white transition-colors"
-  onClick={() => setMobileMenuOpen(true)}
-  aria-label="Open menu"
->
-  <Menu className="h-7 w-7" />
-</button>
-
-
-</div>
-</nav>
-</header>
-
-<ProductsPage 
-onBackToHome={() => setCurrentView('home')} 
-onSelectProduct={handleSelectProduct}
-scrollToSection={scrollToSection}
-/>
-</div>
-);
-}
-
-if (currentView === 'dexarm') {
-  return (
-    <div className="min-h-screen bg-black">
-      <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
-       <nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
-       <div className="flex justify-between items-center">
-       <button 
-       onClick={() => setCurrentView('home')}
-       className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
-       >
-       <Eye className="h-8 w-8 text-blue-600 mr-3" />
-       <span className="text-2xl font-bold text-white">VividSense</span>
-       </button>
-       
-       <div className="hidden md:flex space-x-8">
-       <button 
-       onClick={() => setCurrentView('home')}
-       className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
-       >
-       Home
-       </button>
-       <button 
-       onClick={() => setCurrentView('products')}
-       className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
-       >
-        Catalog
-       </button>
-        {/* Mobile Hamburger */}
-<button
-  className="md:hidden text-gray-300 hover:text-white transition-colors"
-  onClick={() => setMobileMenuOpen(true)}
-  aria-label="Open menu"
->
-  <Menu className="h-7 w-7" />
-</button>
-
-       </div>
-   </div>
-   </nav>
-   </header>
-
-
-      <DexarmConfigurator />
+<>
+{/* Mobile Menu Overlay - Shows on all pages */}
+{mobileMenuOpen && (
+  <div className="fixed inset-0 z-[1000000] bg-black/80 backdrop-blur-sm md:hidden">
+    <div className="absolute top-6 right-6">
+      <button onClick={() => setMobileMenuOpen(false)}>
+        <X className="h-8 w-8 text-white" />
+      </button>
     </div>
-  );
-}
 
- 
-return (
+    <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl text-white">
+      <button onClick={() => { setCurrentView('home'); setMobileMenuOpen(false); setTimeout(() => scrollToSection('about'), 100); }}>
+        About Us
+      </button>
+      <button onClick={() => { setCurrentView('home'); setMobileMenuOpen(false); setTimeout(() => scrollToSection('product'), 100); }}>
+        Product
+      </button>
+      <button onClick={() => { setCurrentView('products'); setMobileMenuOpen(false); }}>
+        Catalog
+      </button>
+      <button onClick={() => { setCurrentView('home'); setMobileMenuOpen(false); setTimeout(() => scrollToSection('updates'), 100); }}>
+        Updates
+      </button>
+      <button onClick={() => { setCurrentView('home'); setMobileMenuOpen(false); setTimeout(() => scrollToSection('apply'), 100); }}>
+        Apply
+      </button>
+    </div>
+  </div>
+)}
+
 <div className="min-h-screen bg-black">
 {/* Header */}
 <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-[999999] w-full max-w-4xl px-4">
@@ -449,35 +330,6 @@ return (
     </div>
   </nav>
 </header>
-
-{mobileMenuOpen && (
-  <div className="fixed inset-0 z-[1000000] bg-black/80 backdrop-blur-sm md:hidden">
-    <div className="absolute top-6 right-6">
-      <button onClick={() => setMobileMenuOpen(false)}>
-        <X className="h-8 w-8 text-white" />
-      </button>
-    </div>
-
-    <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl text-white">
-      <button onClick={() => { scrollToSection('about'); setMobileMenuOpen(false); }}>
-        About Us
-      </button>
-      <button onClick={() => { scrollToSection('product'); setMobileMenuOpen(false); }}>
-        Product
-      </button>
-      <button onClick={() => { setCurrentView('products'); setMobileMenuOpen(false); }}>
-        Catalog
-      </button>
-      <button onClick={() => { scrollToSection('updates'); setMobileMenuOpen(false); }}>
-        Updates
-      </button>
-      <button onClick={() => { scrollToSection('apply'); setMobileMenuOpen(false); }}>
-        Apply
-      </button>
-    </div>
-  </div>
-)}
-
 
 {/* Hero Section */}
 <section id="hero" className="relative bg-gradient-to-b from-gray-900 to-black min-h-screen flex items-center justify-center pt-20 overflow-hidden" role="banner">

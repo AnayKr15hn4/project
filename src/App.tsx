@@ -224,18 +224,170 @@ if (currentView === 'product') {
  //sourounding scanner
 return (
 <div className="min-h-screen bg-black">
-{/* ===== GLOBAL HEADER ===== */}
-<header className="fixed top-4 left-1/2 -translate-x-1/2 z-[999999] w-full max-w-4xl px-4">
-  <nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
+{/* Header for Product Page */}
+<header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
+<nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
+<div className="flex justify-between items-center">
+<button 
+onClick={() => setCurrentView('home')}
+className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
+>
+<Eye className="h-8 w-8 text-blue-600 mr-3" />
+<span className="text-2xl font-bold text-white">VividSense</span>
+</button>
+
+<div className="hidden md:flex space-x-8">
+<button 
+onClick={() => setCurrentView('home')}
+className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+>
+Home
+</button>
+ <button 
+onClick={() => setCurrentView('products')}
+className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+>
+Catalog
+ </button>
+
+ {/* Mobile Hamburger */}
+<button
+  className="md:hidden text-gray-300 hover:text-white transition-colors"
+  onClick={() => setMobileMenuOpen(true)}
+  aria-label="Open menu"
+>
+  <Menu className="h-7 w-7" />
+</button>
+
+
+</div>
+
+
+</div>
+</nav>
+
+ 
+</header>
+
+<ProductConfigurator />
+</div>
+);
+}
+
+if (currentView === 'products') {
+ //product page
+return (
+<div className="min-h-screen bg-black">
+{/* Header for Products Page */}
+<header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
+<nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
+<div className="flex justify-between items-center">
+<button 
+onClick={() => setCurrentView('home')}
+className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
+>
+<Eye className="h-8 w-8 text-blue-600 mr-3" />
+<span className="text-2xl font-bold text-white">VividSense</span>
+</button>
+
+<div className="hidden md:flex space-x-8">
+<button 
+onClick={() => setCurrentView('home')}
+className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+>
+Home
+</button>
+<span className="text-blue-400 font-medium">
+Catalog
+</span>
+</div>
+
+{/* Mobile Hamburger */}
+<button
+  className="md:hidden text-gray-300 hover:text-white transition-colors"
+  onClick={() => setMobileMenuOpen(true)}
+  aria-label="Open menu"
+>
+  <Menu className="h-7 w-7" />
+</button>
+
+
+</div>
+</nav>
+</header>
+
+<ProductsPage 
+onBackToHome={() => setCurrentView('home')} 
+onSelectProduct={handleSelectProduct}
+scrollToSection={scrollToSection}
+/>
+</div>
+);
+}
+
+if (currentView === 'dexarm') {
+  return (
+    <div className="min-h-screen bg-black">
+      <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
+       <nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
+       <div className="flex justify-between items-center">
+       <button 
+       onClick={() => setCurrentView('home')}
+       className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
+       >
+       <Eye className="h-8 w-8 text-blue-600 mr-3" />
+       <span className="text-2xl font-bold text-white">VividSense</span>
+       </button>
+       
+       <div className="hidden md:flex space-x-8">
+       <button 
+       onClick={() => setCurrentView('home')}
+       className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+       >
+       Home
+       </button>
+       <button 
+       onClick={() => setCurrentView('products')}
+       className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+       >
+        Catalog
+       </button>
+        {/* Mobile Hamburger */}
+<button
+  className="md:hidden text-gray-300 hover:text-white transition-colors"
+  onClick={() => setMobileMenuOpen(true)}
+  aria-label="Open menu"
+>
+  <Menu className="h-7 w-7" />
+</button>
+
+       </div>
+   </div>
+   </nav>
+   </header>
+
+
+      <DexarmConfigurator />
+    </div>
+  );
+}
+
+ 
+return (
+<div className="min-h-screen bg-black">
+{/* Header */}
+<header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-[999999] w-full max-w-4xl px-4">
+  <nav
+    className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3"
+    role="navigation"
+    aria-label="Main navigation"
+  >
     <div className="flex justify-between items-center">
 
       {/* Logo */}
       <button
-        onClick={() => {
-          setCurrentView('home');
-          scrollToSection('hero');
-        }}
-        className="flex items-center hover:opacity-80 transition-opacity"
+        onClick={() => scrollToSection('hero')}
+        className="flex items-center bg-transparent border-none cursor-pointer hover:opacity-80 transition-opacity"
       >
         <Eye className="h-8 w-8 text-blue-600 mr-3" />
         <span className="text-2xl font-bold text-white">VividSense</span>
@@ -245,27 +397,49 @@ return (
       <div className="hidden md:flex space-x-8">
         <button
           onClick={() => scrollToSection('about')}
-          className="text-gray-300 hover:text-blue-400"
+          className="text-gray-300 hover:text-blue-400 font-medium transition-colors bg-transparent border-none cursor-pointer"
         >
-          About
+          About Us
         </button>
+
+        <div className="relative group">
+          <button
+            onClick={() => scrollToSection('product')}
+            className="text-gray-300 hover:text-blue-400 font-medium transition-colors bg-transparent border-none cursor-pointer"
+          >
+            Product
+          </button>
+
+          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div className="bg-gray-900/95 border border-gray-700 rounded-lg shadow-xl py-2 min-w-[140px]">
+              <button
+                onClick={() => setCurrentView('products')}
+                className="w-full text-left text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 font-medium transition-colors bg-transparent border-none cursor-pointer px-4 py-2 rounded"
+              >
+                Catalog
+              </button>
+            </div>
+          </div>
+        </div>
+
         <button
-          onClick={() => scrollToSection('product')}
-          className="text-gray-300 hover:text-blue-400"
+          onClick={() => scrollToSection('updates')}
+          className="text-gray-300 hover:text-blue-400 font-medium transition-colors bg-transparent border-none cursor-pointer"
         >
-          Product
+          Updates
         </button>
+
         <button
-          onClick={() => setCurrentView('products')}
-          className="text-gray-300 hover:text-blue-400"
+          onClick={() => scrollToSection('apply')}
+          className="text-gray-300 hover:text-blue-400 font-medium transition-colors bg-transparent border-none cursor-pointer"
         >
-          Catalog
+          Apply
         </button>
       </div>
 
       {/* Mobile Hamburger */}
       <button
-        className="md:hidden text-gray-300 hover:text-white"
+        className="md:hidden text-gray-300 hover:text-white transition-colors"
         onClick={() => setMobileMenuOpen(true)}
         aria-label="Open menu"
       >
@@ -275,66 +449,6 @@ return (
     </div>
   </nav>
 </header>
-
-{/* ===== MOBILE MENU OVERLAY ===== */}
-<div
-  className={`
-    md:hidden fixed inset-0 z-[1000000]
-    bg-black/90 backdrop-blur-xl
-    transition-all duration-300 ease-out
-    ${mobileMenuOpen
-      ? 'opacity-100 translate-y-0'
-      : 'opacity-0 -translate-y-6 pointer-events-none'}
-  `}
->
-  <button
-    className="absolute top-6 right-6"
-    onClick={() => setMobileMenuOpen(false)}
-    aria-label="Close menu"
-  >
-    <X className="h-8 w-8 text-white" />
-  </button>
-
-  <div className="flex flex-col items-center justify-center h-full space-y-8 text-2xl text-white">
-    <button
-      onClick={() => {
-        setCurrentView('home');
-        scrollToSection('hero');
-        setMobileMenuOpen(false);
-      }}
-    >
-      Home
-    </button>
-
-    <button
-      onClick={() => {
-        scrollToSection('about');
-        setMobileMenuOpen(false);
-      }}
-    >
-      About
-    </button>
-
-    <button
-      onClick={() => {
-        scrollToSection('product');
-        setMobileMenuOpen(false);
-      }}
-    >
-      Product
-    </button>
-
-    <button
-      onClick={() => {
-        setCurrentView('products');
-        setMobileMenuOpen(false);
-      }}
-    >
-      Catalog
-    </button>
-  </div>
-</div>
-
 
 {mobileMenuOpen && (
   <div className="fixed inset-0 z-[1000000] bg-black/80 backdrop-blur-sm md:hidden">

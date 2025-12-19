@@ -1,14 +1,13 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Eye, Navigation, Shield, Users, Star, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
+import { Eye, Navigation, Shield, Users, Star, Phone, Mail, MapPin, ChevronRight,  Menu, X  } from 'lucide-react';
 import ProductConfigurator from './components/ProductConfigurator';
 import ProductsPage from './components/ProductsPage';
 import ssShowcase from './components/productshow/ss';
 import dexShowcase from './components/productshow/dex';
 import tssing5 from './tssing5.png';
 import DexarmConfigurator from './components/DexarmConfigurator';
-
+import logo from '/vividslogo.png'
 
 
  
@@ -389,8 +388,12 @@ return (
         onClick={() => scrollToSection('hero')}
         className="flex items-center bg-transparent border-none cursor-pointer hover:opacity-80 transition-opacity"
       >
-        <Eye className="h-8 w-8 text-blue-600 mr-3" />
-        <span className="text-2xl font-bold text-white">VividSense</span>
+       <img
+         src={logo}
+         alt="VividSense logo"
+         className="h-8 w-8 mr-3"
+       />
+       <span className="text-2xl font-bold text-white">VividSense</span>
       </button>
 
       {/* Desktop Nav */}

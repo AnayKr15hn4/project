@@ -231,8 +231,13 @@ return (
 onClick={() => setCurrentView('home')}
 className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
 >
-<Eye className="h-8 w-8 text-blue-600 mr-3" />
+<img
+  src={logo}
+  alt="VividSense logo"
+  className="h-8 w-8 mr-3"
+/>
 <span className="text-2xl font-bold text-white">VividSense</span>
+
 </button>
 
 <div className="hidden md:flex space-x-8">
@@ -285,8 +290,13 @@ return (
 onClick={() => setCurrentView('home')}
 className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
 >
-<Eye className="h-8 w-8 text-blue-600 mr-3" />
+<img
+  src={logo}
+  alt="VividSense logo"
+  className="h-8 w-8 mr-3"
+/>
 <span className="text-2xl font-bold text-white">VividSense</span>
+
 </button>
 
 <div className="hidden md:flex space-x-8">
@@ -334,8 +344,13 @@ if (currentView === 'dexarm') {
        onClick={() => setCurrentView('home')}
        className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200 bg-transparent border-none"
        >
-       <Eye className="h-8 w-8 text-blue-600 mr-3" />
-       <span className="text-2xl font-bold text-white">VividSense</span>
+        <img
+          src={logo}
+          alt="VividSense logo"
+          className="h-8 w-8 mr-3"
+        />
+        <span className="text-2xl font-bold text-white">VividSense</span>
+
        </button>
        
        <div className="hidden md:flex space-x-8">

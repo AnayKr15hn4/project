@@ -224,8 +224,6 @@ if (currentView === 'product') {
  //sourounding scanner
 return (
 <div className="min-h-screen bg-black">
-return (
-<>
 {/* Header for Product Page */}
 <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl px-4">
 <nav className="bg-gray-900/90 backdrop-blur-md shadow-lg border border-gray-700 rounded-full px-6 py-3">
@@ -479,6 +477,7 @@ return (
     </div>
   </div>
 )}
+
 
 {/* Hero Section */}
 <section id="hero" className="relative bg-gradient-to-b from-gray-900 to-black min-h-screen flex items-center justify-center pt-20 overflow-hidden" role="banner">

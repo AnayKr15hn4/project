@@ -250,11 +250,23 @@ className="text-gray-300 hover:text-blue-400 font-medium transition-colors durat
 Catalog
  </button>
 
+ {/* Mobile Hamburger */}
+<button
+  className="md:hidden text-gray-300 hover:text-white transition-colors"
+  onClick={() => setMobileMenuOpen(true)}
+  aria-label="Open menu"
+>
+  <Menu className="h-7 w-7" />
+</button>
+
+
 </div>
 
 
 </div>
 </nav>
+
+ 
 </header>
 
 <ProductConfigurator />
@@ -290,6 +302,14 @@ Catalog
 </span>
 </div>
 
+{/* Mobile Hamburger */}
+<button
+  className="md:hidden text-gray-300 hover:text-white transition-colors"
+  onClick={() => setMobileMenuOpen(true)}
+  aria-label="Open menu"
+>
+  <Menu className="h-7 w-7" />
+</button>
 
 
 </div>
@@ -332,6 +352,15 @@ if (currentView === 'dexarm') {
        >
         Catalog
        </button>
+        {/* Mobile Hamburger */}
+<button
+  className="md:hidden text-gray-300 hover:text-white transition-colors"
+  onClick={() => setMobileMenuOpen(true)}
+  aria-label="Open menu"
+>
+  <Menu className="h-7 w-7" />
+</button>
+
        </div>
    </div>
    </nav>

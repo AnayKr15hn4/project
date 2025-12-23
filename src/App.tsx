@@ -413,6 +413,12 @@ return (
 
       {/* Desktop Nav */}
       <div className="hidden md:flex space-x-8">
+       <button 
+        onClick={() => scrollToSection('home')}
+        className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
+        >
+         Home
+        </button>
         <button
           onClick={() => scrollToSection('about')}
           className="text-gray-300 hover:text-blue-400 font-medium transition-colors bg-transparent border-none cursor-pointer"

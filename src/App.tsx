@@ -564,7 +564,7 @@ to navigate the world with confidence and independence.
 </div>
 <h3 className="text-xl font-semibold text-white mb-3">Our Vision</h3>
 <p className="text-gray-300">
-A world where visual impairment doesn't limit anyone's ability to 
+A world where physiscl impairment doesn't limit anyone's ability to 
 explore, work, and live life to the fullest.
 </p>
 </div>
@@ -618,7 +618,7 @@ We strive to create the best customer and user experience without products and i
 <ul className="space-y-2 text-gray-300">
 <li className="flex items-start">
 <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-Rree returns 
+Free returns 
 </li>
 <li className="flex items-start">
 <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>

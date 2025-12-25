@@ -564,7 +564,7 @@ to navigate the world with confidence and independence.
 </div>
 <h3 className="text-xl font-semibold text-white mb-3">Our Vision</h3>
 <p className="text-gray-300">
-A world where physiscl impairment doesn't limit anyone's ability to 
+A world where physical impairment doesn't limit anyone's ability to 
 explore, work, and live life to the fullest.
 </p>
 </div>
